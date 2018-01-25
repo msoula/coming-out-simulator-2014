@@ -13,7 +13,7 @@ function step(timestamp) {
 
 	// Tick!
 	publish("tick",[]);
-	
+
 	// Do the next thing in the queue
 	if(_queue.length>0){
 		ticker += 1000/60; // HARD CODED. So it pauses when you're away.
@@ -65,10 +65,15 @@ function queue(callback, duration, instantaneous){
 }
 
 function Character(character){
-	return function(message){
+	return function(message, ...params){
 		if(!message) return;
+        // ugly as f*** but I don't have the time to do better for now
+        if(-1 < ['menu', 'jack_1', 'dinner_1', 'dinner_2', 'dinner_3', 'dinner_4', 'dinner_5', 'jack_2', 'outro'].indexOf(message)) {
+            character.area = message;
+            return;
+        }
 		queue(function(){
-			publish("say", [character, message]);
+			publish("say", [character, message, ...params]);
 		},getDuration(message));
 	};
 }
@@ -144,9 +149,9 @@ function Sprite(label,options){
 
 createjs.Sound.alternateExtensions = ["mp3"];
 function Sound(label,src){
-	
+
 	var deferred = Q.defer();
-	
+
 	createjs.Sound.registerSound({
 		id: label,
 		src: src

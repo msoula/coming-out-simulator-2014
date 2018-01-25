@@ -10,7 +10,7 @@ var dialogueDOMOffset = 20;
 var choicesDOM = document.getElementById("choices");
 var backgroundDOM = document.getElementById("background");
 
-subscribe("say", function(character, message){
+subscribe("say", function(character, message, ...params){
 
 	// Add dialogue bubble
 	var dom = document.createElement("div");
@@ -18,7 +18,7 @@ subscribe("say", function(character, message){
 	dom.style.color = character.color || "#000";
 	dom.style.background = character.background || "#FFF";
 	dom.style.borderLeftColor = dom.style.borderRightColor = character.background || "#FFF";
-	dom.innerHTML = message;
+	dom.innerHTML = tr(character.area, message).format(...params);
 	dialogueDOM.appendChild(dom);
 
 	// Play sounds
@@ -48,7 +48,7 @@ subscribe("choose", function(choices){
 
 		var label = labels[i];
 		var button = document.createElement("div");
-		button.innerHTML = label;
+		button.innerHTML = tr("choices", label);
 		button.onclick = (function(callback,message){
 			return function(){
 				choicesDOM.innerHTML = "";
@@ -132,7 +132,7 @@ subscribe("show", function(label, artLabel, position){
 
 	// If it's a sprite, some extra logic...
 	if(image && _sprites[artLabel]){
-		
+
 		if(item.handle){
 			unsubscribe(item.handle);
 		}else{

@@ -12,6 +12,9 @@ function Start_Jack_2(){
 
 	/////// SET UP SCENE ////////
 
+    j("jack_2");
+    n("jack_2");
+
 	Show("background","bedroom_2");
 	Show("us","bedroom_us_2");
 	Show("light","bedroom_light_2",{x:0,y:159});
@@ -119,7 +122,7 @@ function What_Happened_Girl(message){
 	j("Ew, seriously?");
 	n("Her name's Claire Something. She'll also be tutoring me.");
 	j("Ew squared, they're also hooking you up with your own tutor?");
-	n("Yup."); 
+	n("Yup.");
 	What_Happened_2();
 }
 function What_Happened_Texts(message){
@@ -134,7 +137,7 @@ function What_Happened_Texts(message){
 }
 
 function What_Happened_2(){
-	
+
 	n("And that's just one out of three crappy things that happened.");
 	j("Nicky...");
 	j("I am truly, truly apologetic.");
@@ -281,12 +284,12 @@ function What_Now_3(){
 	j(". . .");
 	j("I love you, Nicky.");
 	n("I love you too, Jack.");
-	
+
 	var insult = "";
 	if($.hippies) insult+=" new-age hippie";
 	if($.im_a_poet) insult+=" amateur poet";
 	if(insult!=""){
-		n("You"+insult+".");
+		n("You{0}.", insult);
 	}else{
 		n("You goof.");
 	}

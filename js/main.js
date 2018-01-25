@@ -1,5 +1,5 @@
 window.onload = function(){
-	
+
 	var loading_bar = document.getElementById("loading_bar");
 	subscribe("resourceLoaded",function(){
 		loading_bar.style.width = Math.floor((_resourcesLoaded/_resourcePromises.length)*100)+"%";
@@ -11,7 +11,6 @@ window.onload = function(){
 		},1000);
 		setTimeout(function(){
 			document.getElementById("game").setAttribute("screen","game");
-			Start();
 		},1500);
 	});
 
@@ -30,18 +29,18 @@ window.onload2 = function(){
 
 	    "main_menu_convo_1": 2,
 	    "main_menu_convo_2": 3,
-	    
+
 	    "inception_answer": "dream",
 	    "hippies": true,
 	    "coming_out_readiness": "no",
-	    
+
 	    "what_you_called_out": "Hello, anybody?",
 	    "waiting_action": "wait",
 	    "studying_subject": "Computer Science",
 	    "relationship": "friend",
 	    "lying_about_hanging_out": true,
 	    "studying_subject_2": "Computer Science",
-	    
+
 	    "crying": "sympathy",
 	    "what_are_you": "son",
 	    "top_or_bottom": "versatile",
@@ -51,7 +50,7 @@ window.onload2 = function(){
 	    "tried_talking_about_it": true,
 	    "father_oblivious": false,
 	    "punched":true,
-	    
+
 	    "told_jack": "texts",
 	    "blame": "parents",
 	    "breaking_up_soon": true,

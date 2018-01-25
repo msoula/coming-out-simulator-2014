@@ -8,11 +8,15 @@
 
 function Start_Dinner_5(){
 
+    f("dinner_5");
+    m("dinner_5");
+    n("dinner_5");
+
 	PlaySound("sfx","dinner_door");
-	
+
 	f("Hey Qiying! Hey Nick!");
 	f("I'm home!");
-	
+
 	Show("dad","dad_serious");
 
 	m("Hi honey.");
@@ -50,7 +54,7 @@ function Start_Dinner_5(){
 }
 
 function Casual(){
-	
+
 	f("Hey Qi, what's that sauce on your plate?");
 	f("Uh...");
 
@@ -58,7 +62,7 @@ function Casual(){
 
 	Choose({
 		"It's vomit.": function(message){
-			
+
 			n(message);
 
 			$.grounded = 2;
@@ -70,7 +74,7 @@ function Casual(){
 
 		},
 		"Don't eat it! It's, uh, really not good.": function(message){
-			
+
 			n(message);
 
 			$.grounded = 1;
@@ -82,7 +86,7 @@ function Casual(){
 
 		},
 		"Why don't you give it a try, dad?": function(message){
-			
+
 			n(message);
 
 			$.grounded = 0;
@@ -102,7 +106,7 @@ function Casual(){
 }
 
 function Casual_2(){
-	
+
 	m("Dear...");
 	f("So, son! How's school?");
 
@@ -113,9 +117,9 @@ function Casual_2(){
 
 			f("Really, fine?");
 			if($.studying_subject!=$.studying_subject_2){
-				f("What about your poor grades in "+$.studying_subject+" and "+$.studying_subject_2+"?");
+				f("What about your poor grades in {0} and {1}?", $.studying_subject, $.studying_subject_2);
 			}else{
-				f("What about your poor grades in "+$.studying_subject+"?");
+				f("What about your poor grades in {0}?", $.studying_subject);
 			}
 
 			m("Nick and I were just talking about that.");
@@ -136,7 +140,7 @@ function Casual_2(){
 					f("Don't you remember? I just grounded you for a week.");
 				}
 				f("You must get your stupid from your mother's side. Haha!");
-				
+
 				n("Um. I...");
 
 				$.grounded++;
@@ -225,7 +229,7 @@ function Getting_A_Tutor(){
 }
 
 function Getting_A_Tutor_2(){
-	
+
 	f("You're becoming a man, son!");
 	f("If I were your age, I ditch your mother and chase Claire, too! Haha!");
 
@@ -237,9 +241,9 @@ function Getting_A_Tutor_2(){
 		m("Maybe to Claire's school.");
 	}
 	if($.studying_subject!=$.studying_subject_2){
-		m("Claire will be tutoring Nick every day after school in "+$.studying_subject+" and "+$.studying_subject_2+".");
+		m("Claire will be tutoring Nick every day after school in {0} and {1}.", $.studying_subject, $.studying_subject_2);
 	}else{
-		m("Claire will be tutoring Nick every day after school in "+$.studying_subject+".");
+		m("Claire will be tutoring Nick every day after school in {0}.", $.studying_subject);
 	}
 
 	f("Nick, how does all this sound? Yes or no?");
@@ -270,7 +274,7 @@ function Getting_A_Tutor_2(){
 }
 
 function Agree_With_Dad(){
-	
+
 	n("...Yes.");
 
 	f("Hm.");
@@ -284,7 +288,7 @@ function Agree_With_Dad(){
 
 	Choose({
 		"I failed my midterms.": function(message){
-			
+
 			n(message);
 
 			f("...Oh.");
@@ -298,9 +302,9 @@ function Agree_With_Dad(){
 
 		},
 		"I had sex with Jack.": function(message){
-			
+
 			n(message);
-			
+
 			Show("mom","mom_cry");
 			m("[sob]");
 			f(". . .");
@@ -308,16 +312,16 @@ function Agree_With_Dad(){
 
 		},
 		"I had sex with Claire.": function(message){
-			
+
 			n(message);
-			
+
 			m("...Nick!");
 			f(". . .");
 			f("   Nnnnnniiiiiiiiice.");
 			m("...Dear!");
 			f("Wait, uh, you didn't get her pregnant, did you?");
 			n("No. I'm not stupid.");
-			
+
 			Show("dad","dad_serious");
 
 			f("Good. Otherwise you'd be stuck for the next two decades raising a kid, like me! Haha!");
@@ -340,7 +344,7 @@ function Agreeable_Ending(){
 	f("So!");
 	f("Who wants to watch a movie this weekend? I hear Inception is good.");
 
-	Choose({	
+	Choose({
 		"Let's watch it! I haven't seen it yet.": function(message){
 			n(message);
 			f("Then it's a plan!");
@@ -356,9 +360,9 @@ function Agreeable_Ending(){
 			f("What, Inception too complicated for you?");
 			n("Hey...");
 			if($.studying_subject!=$.studying_subject_2){
-				f("Sure, I understand if you failed "+$.studying_subject+" and "+$.studying_subject_2+"...");
+				f("Sure, I understand if you failed {0} and {1}...", $.studying_subject, $.studying_subject_2);
 			}else{
-				f("Sure, I understand if you failed "+$.studying_subject+"...");
+				f("Sure, I understand if you failed {0}...", $.studying_subject);
 			}
 			f("But come on, this is a <i>movie</i>!");
 			f("You can't have inherited that much stupid from your mother's side! Haha!");
@@ -388,7 +392,7 @@ function Argue_With_Dad(){
 
 	Choose({
 		"My boyfriend.": function(message){
-			
+
 			n(message);
 
 			Show("mom","mom_cry");
@@ -453,7 +457,7 @@ function Argument_Ending(){
 			n("Look, like I told Mom just now, I'm your SON, isn't that enou--");
 			break;
 	}
-	
+
 	f("Nick, you're changing schools.");
 	n(". . .");
 	m("huuu... huuu... huuu...");
@@ -484,10 +488,10 @@ function Argument_Ending(){
 			n("Yes.");
 			n("FUCK this.");
 			n("And FUCK you.");
-			
+
 			Show("nicky","dinner_nicky_outrage");
 			n("Fuck BOTH of you, you narcissistic slimy pieces of SHI--");
-			
+
 			Dinner_Ending_Punch();
 
 		},
@@ -508,11 +512,11 @@ function Argument_Ending(){
 			PlaySound("sfx","dinner_door");
 
 			m(". . .");
-			
+
 			Show("mom","mom_cry");
 
 			m("BAWWWWW");
-			
+
 			Dinner_Ending();
 
 		},
@@ -527,7 +531,7 @@ function Argument_Ending(){
 			m("Please! It's my fault! Don't--");
 			f("Ice keeps the swelling down.");
 			m("DEAR!");
-			
+
 			Dinner_Ending_Punch();
 
 		}
@@ -548,10 +552,10 @@ function Dinner_Ending_Punch(){
 	Show("mom","mom_cry");
 	Show("nicky","dinner_nicky_punched");
 	Show("dinner_punch_arm","dinner_punch_arm",{x:0,y:300});
-	
+
 	$.punched = true;
-	Dinner_Ending();	
-	
+	Dinner_Ending();
+
 }
 
 function Dinner_Ending(){

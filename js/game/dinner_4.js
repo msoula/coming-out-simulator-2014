@@ -4,6 +4,9 @@
 
 function Start_Dinner_4(){
 
+    m("dinner_4");
+    n("dinner_4");
+
 	n(". . .");
 	m("It's because your dad's almost never home, isn't it?");
 	m("Without a strong male role model, you become confused...");
@@ -29,7 +32,7 @@ function Start_Dinner_4(){
 }
 
 function My_Fault(){
-	
+
 	Show("clock_time","clock_1930");
 
 	n(". . .");
@@ -275,7 +278,7 @@ function Father_Soon(message){
 	Choose({
 		"Okay.": function(message){
 			$.promise_silence = "yes";
-			
+
 			n(message);
 			m("Okay.");
 			m(". . .");
@@ -284,7 +287,7 @@ function Father_Soon(message){
 		},
 		"No. Not okay.": function(message){
 			$.promise_silence = "no";
-			
+
 			n(message);
 			m("Nick, no no no, please--");
 			m("Oh no. Your father's here.");
@@ -292,7 +295,7 @@ function Father_Soon(message){
 		},
 		"As long as you don't tell him, either.": function(message){
 			$.promise_silence = "tit for tat";
-			
+
 			n(message);
 			m("I won't.");
 			n("Promise me you won't.");

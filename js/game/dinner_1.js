@@ -2,6 +2,9 @@ function Start_Dinner_1(){
 
 	/////// SET UP SCENE ////////
 
+    n("dinner_1");
+    m("dinner_1");
+
 	Show("background","dinner");
 	Show("clock","clock_ticking",{x:155,y:294});
 	Show("clock_time","clock_1855",{x:155+5,y:294+37});
@@ -27,7 +30,7 @@ function Start_Dinner_1(){
 }
 
 function Waiting_1(message){
-	
+
 	$.what_you_called_out = message;
 	n(message);
 
@@ -51,7 +54,7 @@ function Waiting_1(message){
 }
 
 function Waiting_2(message){
-	
+
 	n(message);
 	n(". . .");
 
@@ -79,7 +82,7 @@ function Waiting_2(message){
 
 			Show("nicky","dinner_nicky_sit");
 			n("Oh, hey mom.");
-			
+
 			Waiting_End();
 		},
 		"Ugh, why did we get that thing?": function(message){
@@ -93,11 +96,11 @@ function Waiting_2(message){
 
 			Show("nicky","dinner_nicky_sit");
 			n("Oh! Hey mom.");
-			
+
 			Waiting_End();
 		},
 		"Meow! Meow! Meow! Meow!": function(message){
-			
+
 			n("Meow.");
 			n("Meow!");
 

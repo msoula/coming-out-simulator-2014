@@ -5,6 +5,9 @@
 
 function Start_Dinner_2(){
 
+    m("dinner_2");
+    n("dinner_2");
+
 	m("Hi sweetie.");
 	Show("mom","mom_sit");
 
@@ -81,7 +84,7 @@ function Start_Dinner_2_2(message){
 
 	n(message);
 	m("Good.");
-	m("You really, really could improve your grades in your "+$.studying_subject+" class.");
+	m("You really, really could improve your grades in your {0} class.", $.studying_subject);
 	n(". . .");
 	m("So, I'll be at the library tomorrow.");
 	m("Will I see you studying there?");
@@ -95,10 +98,10 @@ function Start_Dinner_2_2(message){
 			Buddy_1(message);
 		},
 		"Mom, Jack is... more than a friend.": function(message){
-			
+
 			$.relationship = "best friend";
 			n(message);
-			
+
 			$.lying_about_hanging_out = true;
 			m("Oh, like best friends?");
 			n("Um. Well--");
@@ -281,7 +284,7 @@ function Buddy_Choice(){
 				n(message);
 				Buddy_Aftermath();
 			}
-			
+
 		}
 	});
 }
@@ -305,7 +308,7 @@ function Buddy_Aftermath(){
 }
 
 function Buddy_Aftermath_2(message){
-	
+
 	n(message);
 
 	n("How do you even...");
@@ -352,8 +355,8 @@ function Grades_Start(message){
 }
 
 function Grades_Start_1(){
-	m("You first told me it was "+$.studying_subject+".");
-	m("Now you tell me it's "+$.studying_subject_2+"?");
+	m("You first told me it was {0}.", $.studying_subject);
+	m("Now you tell me it's {0}?", $.studying_subject_2);
 	$.lying_about_studying = true;
 	n("Mom, I was just confus--");
 	if($.lying_about_hanging_out || $.lying_about_relationship){
@@ -374,7 +377,7 @@ function Grades_Start_2(){
 		n("We study.");
 	}
 	m(". . .");
-	m("Still, your grades in your "+$.studying_subject_2+" class are terrible.");
+	m("Still, your grades in your {0} class are terrible.", $.studying_subject_2);
 	n(". . .");
 	Grades_Explaining();
 }

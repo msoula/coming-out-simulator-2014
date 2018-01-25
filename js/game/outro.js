@@ -7,8 +7,11 @@ function Start_Outro(){
 
 	// Just clear dialogue & stuff.
 	queue(ClearScene,0);
-	
+
 	/////// SET UP SCENE ////////
+
+    N("outro");
+    p("outro");
 
 	Show("background","coffeehouse_2");
 	Show("cup","cup_steam",{x:44,y:359});
@@ -76,7 +79,7 @@ function Closure(){
 	if($.main_menu_convo_2==3){
 		N("Like you said, this 'true' game is full of lies.");
 	}
-	
+
 	p("You could have at least given me a different colour.");
 	N("It's been four years since that night...");
 	N("What do you think happened afterwards?");
@@ -131,7 +134,7 @@ function Closure_Story(){
 	var options = [];
 	if(!$.told_story_lie) options["The Lie."]=Tell_Me_A_Lie;
 	if(!$.told_story_truth) options["The Truth."]=Tell_Me_A_Truth;
-	if(!$.told_story_half_truth) options["The Half-Truth."]=Tell_Me_A_Half_Truth; 
+	if(!$.told_story_half_truth) options["The Half-Truth."]=Tell_Me_A_Half_Truth;
 	Choose(options);
 
 }
@@ -200,7 +203,7 @@ function Tell_Me_A_Lie(message){
 	});
 }
 function Tell_Me_A_Lie_2(){
-	
+
 	N("They took me in as their foster child, and I was their full-time boytoy.");
 
 	if($.outro_convo_lie==1){
@@ -288,7 +291,7 @@ function Tell_Me_A_Truth(message){
 
 }
 function Tell_Me_A_Truth_2(){
-	
+
 	N("After EA, I went on to go indie.");
 	N("But I stayed in touch with friends at EA, and stayed in the Bay Area.");
 
@@ -325,7 +328,7 @@ function Tell_Me_A_Half_Truth(message){
 	Is_Last_Story();
 
 	N("Claire, in an ironic twist of fate, was also bisexual.");
-	N("We told each other about it during a "+$.studying_subject+" study session.");
+	N("We told each other about it during a {0} study session.", $.studying_subject);
 
 	p("What a twist!");
 
@@ -361,7 +364,7 @@ function Tell_Me_A_Half_Truth(message){
 
 }
 function Tell_Me_A_Half_Truth_2(){
-	
+
 	N("And exchanged tips!");
 	N("Like... do a 'come hither' motion with your fingers, or, rub the head against the roof of your mouth.");
 	p("T.M.I, dude...");
@@ -375,7 +378,7 @@ function Tell_Me_A_Half_Truth_2(){
 	N("Proud bisexual sluts.");
 
 	p("What a touching story. I think.");
-	
+
 	N("And of course, we wingman/wingwoman for each other.");
 
 	p(". . .");
@@ -389,13 +392,13 @@ function Tell_Me_A_Half_Truth_2(){
 
 
 function Finale_1(){
-	
+
 	N("And that's the last of the post-coming-out stories!");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
 	queue(ClearDialogue,0);
-	
+
 	Show("cup",null);
 	Show("nicky","coffee_nicky_throw");
 	PlaySound("sfx","coffee_throw");
@@ -463,7 +466,7 @@ function Finale_2(){
 	}else if($.father_oblivious==false){
 		N("My texts getting read. Being forced to change schools. All the verbal abuse.");
 	}else if($.changing_schools){
-		N("My texts getting read. Being forced to change schools. The attempted 'gay rehab' with Claire.");	
+		N("My texts getting read. Being forced to change schools. The attempted 'gay rehab' with Claire.");
 	}else{
 		N("My texts getting read. No more after-school hours to myself. The attempted 'gay rehab' with Claire.");
 	}
@@ -514,19 +517,19 @@ function Finale_3(message){
 
 	// CUTSCENE -- MY NEW BOYFRIEND
 	Wait(1000);
-	
+
 	PlaySound("sfx2","laptop_pack");
 	Show("nicky","coffee_nicky_date_1");
 	Wait(1000);
-	
+
 	PlaySound("sfx","step_2");
 	Show("nicky","coffee_nicky_date_2");
 	Wait(1000);
-	
+
 	PlaySound("sfx","step_1");
 	Show("nicky","coffee_nicky_date_3");
 	Wait(1000);
-	
+
 	PlaySound("sfx","step_2",{volume:0.75});
 	Show("nicky","coffee_nicky_date_4");
 	Wait(1000);
@@ -542,7 +545,7 @@ function Finale_3(message){
 
 }
 function Finale_4(message){
-	
+
 	p(message);
 	N("Real life has no replays.");
 

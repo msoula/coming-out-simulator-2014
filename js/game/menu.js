@@ -1,8 +1,11 @@
 function Start(){
 
 	$ = {};
-	
+
 	/////// SET UP SCENE ////////
+
+    N("menu");
+    p("menu");
 
 	Show("background","coffeehouse");
 	Show("cup","cup_steam",{x:44,y:359});
@@ -39,7 +42,7 @@ function SipCoffee(message){
 }
 
 function Play(message){
-	
+
 	SipCoffee(message);
 
 	// Asked neither
@@ -175,11 +178,11 @@ function Play_3(){
 	Wait(500);
 	Show("nicky","coffee_nicky_throw");
 	PlaySound("sfx","coffee_throw");
-	
+
 	Wait(1000);
 	Show("nicky","coffee_nicky_still_2");
 	Wait(500);
-	
+
 	N("When you play...");
 	N("Choose your words wisely.");
 	N("Every character will remember everything you say. Or don't say.");
@@ -188,7 +191,7 @@ function Play_3(){
 
 	N(". . .");
 	N("Some things are hard not to remember.");
-	
+
 	Clear();
 	Start_Jack_1();
 
@@ -197,13 +200,13 @@ function Play_3(){
 function Credits(message){
 
 	$.asked_credits = true;
-	
+
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
 		SipCoffee("Who are you?");
 	}
-	
+
 	N("Ah, how rude of me! Let me introduce myself.");
 	N("Hi, I'm Nicky Case.");
 	N("That's not my legal name, it's just my REAL name.");
@@ -258,7 +261,7 @@ function About(message){
 		N("...more like a conversation simulator, really...");
 		N("...is a very personal story.");
 	}
-	
+
 	p("Of course. You narcissist.");
 	N("Ha, of course.");
 

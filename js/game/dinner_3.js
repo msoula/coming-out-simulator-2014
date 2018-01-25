@@ -7,6 +7,9 @@
 
 function Start_Dinner_3(){
 
+    m("dinner_3");
+    n("dinner_3");
+
 	n("Mom.");
 
 	Choose({
@@ -29,14 +32,14 @@ function Tutor(message){
 		m("All he does is do poetry.");
 		n("What makes you say th--");
 	}
-	
+
 	m("I'm getting you a home tutor.");
 	n("...what?");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m("She'll be tutoring you in "+$.studying_subject+" and "+$.studying_subject_2+".");
+		m("She'll be tutoring you in {0} and {1}.", $.studying_subject, $.studying_subject_2);
 	}else{
-		m("She'll be tutoring you in "+$.studying_subject+".");
+		m("She'll be tutoring you in {0}.", $.studying_subject);
 	}
 
 	m("Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
@@ -53,7 +56,7 @@ function Tutor_Seeing(message){
 	n(message);
 	m("I'm sorry, <i>seeing</i> Jack?");
 	m("Be careful how you say that. You make it sound like...");
-	
+
 	Choose({
 		"Like we're dating? Yeah. We are.": function(message){
 			n(message);
@@ -182,9 +185,9 @@ function Tutor_Forget(message){
 }
 
 function Threat_Tutor(){
-	
+
 	Show("nicky","dinner_nicky_defiant");
-	
+
 	n(". . .");
 	m("Claire will be tutoring you every day after school, starting tomorrow.");
 
@@ -224,7 +227,7 @@ function Threat_Tutor(){
 function Threat_School(){
 
 	$.changing_schools = true;
-	
+
 	m("You're changing schools.");
 
 	Show("nicky","dinner_nicky_outrage");
@@ -299,7 +302,7 @@ function Plot_Twist_2(){
 	m("Before dinner. I was in your room.");
 
 	// Dinner_1
-	m("You yelled out '"+$.what_you_called_out+"' from downstairs, while I unlocked your phone...");
+	m("You yelled out {0} from downstairs, while I unlocked your phone...", $.what_you_called_out);
 	m("And read what you and Jack have been sending to each other.");
 	m("I'm your mother. I have the right.");
 

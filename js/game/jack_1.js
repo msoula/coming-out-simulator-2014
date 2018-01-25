@@ -7,8 +7,11 @@
 // OKAY, TOO CONVOLUTED, CUT OUT THE DIFFERENT FAMILIES & TYPO parts.
 
 function Start_Jack_1(){
-	
+
 	/////// SET UP SCENE ////////
+
+    j("jack_1");
+    n("jack_1");
 
 	Show("background","bedroom");
 	Show("us","bedroom_us_1");
@@ -142,7 +145,7 @@ function Inception_Neither(message){
 }
 
 function Sadsack(message){
-	
+
 	$.sadsack = true;
 
 	n(message);
@@ -154,7 +157,7 @@ function Sadsack(message){
 }
 
 function Thanks(){
-	
+
 	n("So yeah! Thanks for taking me out to watch Inception!");
 	j("My pleasure, Nicky.");
 	j("You should parody Inception in that odd web game of yours!");
@@ -233,7 +236,7 @@ function Hiding(){
 }
 
 function Hiding_2(message){
-	
+
 	n(message);
 
 	if($.coming_out_readiness=="no"){
@@ -272,7 +275,7 @@ function Hiding_2(message){
 }
 
 function Hiding_3(message){
-	
+
 	n(message);
 	j(". . .");
 	n("I don't want to freak them out too much.");
@@ -301,7 +304,7 @@ function Hiding_3(message){
 	if($.im_a_poet) insult+=" amateur poet";
 	n("See ya.");
 	if(insult!=""){
-		n("You"+insult+".");
+		n("You{0}.", insult);
 	}else{
 		n("You goof.");
 	}
