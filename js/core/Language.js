@@ -19,7 +19,7 @@ Choose({
     },
     "Français": function(message){
         load('fr', function() {
-            Start_Dinner_1();
+            Start();
         });
     }
 });
