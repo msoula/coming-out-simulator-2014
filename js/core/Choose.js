@@ -65,15 +65,25 @@ function queue(callback, duration, instantaneous){
 }
 
 function Character(character){
-	return function(message, ...params){
-		if(!message) return;
-        // ugly as f*** but I don't have the time to do better for now
-        if(-1 < ['menu', 'jack_1', 'dinner_1', 'dinner_2', 'dinner_3', 'dinner_4', 'dinner_5', 'jack_2', 'outro'].indexOf(message)) {
-            character.area = message;
-            return;
+	return function(messages){
+		if(!messages) return;
+        if ('string' === typeof messages) {
+            messages = [messages];
         }
+        if (0 === messages.length) return;
+
+        // translate messages
+        var message = '';
+        messages.map(function(key) {
+            message += tr(key);
+        });
+        if (1 < arguments.length) {
+            // format message with other arguments
+            message = message.format(Array.prototype.slice.call(arguments, 1).map(function(param){return tr(param);}));
+        }
+
 		queue(function(){
-			publish("say", [character, message, ...params]);
+			publish("say", [character, message]);
 		},getDuration(message));
 	};
 }
@@ -83,7 +93,7 @@ function Choose(choices){
 		publish("choose", [choices]);
 		resetTimer();
 	});
-};
+}
 
 function Show(){
 	var args = arguments;

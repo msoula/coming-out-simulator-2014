@@ -8,45 +8,41 @@
 
 function Start_Dinner_5(){
 
-    f("dinner_5");
-    m("dinner_5");
-    n("dinner_5");
-
 	PlaySound("sfx","dinner_door");
 
-	f("string_0000");
-	f("string_0001");
+	f("dinner_5_dialog_0000");
+	f("dinner_5_dialog_0001");
 
 	Show("dad","dad_serious");
 
-	m("string_0002");
-	n("string_0003");
+	m("dinner_5_dialog_0002");
+	n("dinner_5_dialog_0003");
 
-	f("string_0004");
-	f("string_0005");
-	n("string_0006");
+	f("dinner_5_dialog_0004");
+	f("dinner_5_dialog_0005");
+	n("dinner_5_dialog_0006");
 
-	f("string_0007");
+	f("dinner_5_dialog_0007");
 
 	Choose({
 		"dinner_5_choice_1_entry_0000": function(message){
 			n(message);
-			f("string_0008");
-			n("string_0009");
+			f("dinner_5_dialog_0008");
+			n("dinner_5_dialog_0009");
 			Casual();
 		},
 		"dinner_5_choice_1_entry_0001": function(message){
 			n(message);
-			f("string_0010");
-			f("string_0011");
-			n("string_0009");
+			f("dinner_5_dialog_0010");
+			f("dinner_5_dialog_0011");
+			n("dinner_5_dialog_0009");
 			Casual();
 		},
 		"dinner_5_choice_1_entry_0002": function(message){
 			n(message);
-			f("string_0012");
-			f("string_0013");
-			n("string_0009");
+			f("dinner_5_dialog_0012");
+			f("dinner_5_dialog_0013");
+			n("dinner_5_dialog_0009");
 			Casual();
 		}
 	});
@@ -55,8 +51,8 @@ function Start_Dinner_5(){
 
 function Casual(){
 
-	f("string_0014");
-	f("string_0015");
+	f("dinner_5_dialog_0014");
+	f("dinner_5_dialog_0015");
 
 	Show("clock_time","clock_1950");
 
@@ -66,9 +62,9 @@ function Casual(){
 			n(message);
 
 			$.grounded = 2;
-			f("string_0016");
-			f("string_0017");
-			f("string_0018");
+			f("dinner_5_dialog_0016");
+			f("dinner_5_dialog_0017");
+			f("dinner_5_dialog_0018");
 
 			Casual_2();
 
@@ -78,9 +74,9 @@ function Casual(){
 			n(message);
 
 			$.grounded = 1;
-			f("string_0019");
-			f("string_0020");
-			f("string_0021");
+			f("dinner_5_dialog_0019");
+			f("dinner_5_dialog_0020");
+			f("dinner_5_dialog_0021");
 
 			Casual_2();
 
@@ -90,13 +86,13 @@ function Casual(){
 			n(message);
 
 			$.grounded = 0;
-			m("string_0022");
-			f("string_0023");
-			f("string_0024");
-			f("string_0009");
-			n("string_0009");
-			m("string_0009");
-			f("string_0025");
+			m("dinner_5_dialog_0022");
+			f("dinner_5_dialog_0023");
+			f("dinner_5_dialog_0024");
+			f("dinner_5_dialog_0009");
+			n("dinner_5_dialog_0009");
+			m("dinner_5_dialog_0009");
+			f("dinner_5_dialog_0025");
 
 			Casual_2();
 
@@ -107,22 +103,22 @@ function Casual(){
 
 function Casual_2(){
 
-	m("string_0026");
-	f("string_0027");
+	m("dinner_5_dialog_0026");
+	f("dinner_5_dialog_0027");
 
 	Choose({
 		"dinner_5_choice_3_entry_0000": function(message){
 
 			n(message);
 
-			f("string_0028");
+			f("dinner_5_dialog_0028");
 			if($.studying_subject!=$.studying_subject_2){
-				f("string_0029", tr('dinner_2', $.studying_subject), tr('dinner_2', $.studying_subject_2));
+				f("dinner_5_dialog_0029", $.studying_subject, $.studying_subject_2);
 			}else{
-				f("string_0030", tr('dinner_2', $.studying_subject));
+				f("dinner_5_dialog_0030", $.studying_subject);
 			}
 
-			m("string_0031");
+			m("dinner_5_dialog_0031");
 			Getting_A_Tutor();
 
 		},
@@ -134,26 +130,26 @@ function Casual_2(){
 			if($.grounded>0){
 
 				if($.grounded==1){
-					f("string_0032");
+					f("dinner_5_dialog_0032");
 				}
 				if($.grounded==2){
-					f("string_0033");
+					f("dinner_5_dialog_0033");
 				}
-				f("string_0034");
+				f("dinner_5_dialog_0034");
 
-				n("string_0035");
+				n("dinner_5_dialog_0035");
 
 				$.grounded++;
 				if($.grounded==2){
-					f("string_0036");
+					f("dinner_5_dialog_0036");
 				}
 				if($.grounded==3){
-					f("string_0037");
+					f("dinner_5_dialog_0037");
 				}
 
 			}
 
-			m("string_0038");
+			m("dinner_5_dialog_0038");
 			Getting_A_Tutor();
 
 		},
@@ -161,15 +157,15 @@ function Casual_2(){
 			$.tried_talking_about_it = true;
 
 			Show("nicky","dinner_nicky_outrage");
-			n("string_0039");
+			n("dinner_5_dialog_0039");
 			Show("nicky","dinner_nicky_sit");
 
-			m("string_0040");
-			f("string_0041");
-			f("string_0042");
-			f("string_0043");
-			n("string_0006");
-			m("string_0044");
+			m("dinner_5_dialog_0040");
+			f("dinner_5_dialog_0041");
+			f("dinner_5_dialog_0042");
+			f("dinner_5_dialog_0043");
+			n("dinner_5_dialog_0006");
+			m("dinner_5_dialog_0044");
 			Getting_A_Tutor();
 		}
 
@@ -179,39 +175,39 @@ function Casual_2(){
 
 function Getting_A_Tutor(){
 
-	m("string_0045");
-	f("string_0046");
+	m("dinner_5_dialog_0045");
+	f("dinner_5_dialog_0046");
 
 	// Oh dang!
 	Show("nicky","dinner_nicky_defiant");
 
 	switch($.promise_silence){
 		case "yes":
-			n("string_0047");
+			n("dinner_5_dialog_0047");
 			if($.tried_talking_about_it){
-				m("string_0048");
+				m("dinner_5_dialog_0048");
 			}
 			break;
 		case "no":
-			n("string_0049");
-			m("string_0050");
+			n("dinner_5_dialog_0049");
+			m("dinner_5_dialog_0050");
 			break;
 		case "tit for tat":
-			n("string_0051");
+			n("dinner_5_dialog_0051");
 			if($.tried_talking_about_it){
-				m("string_0048");
+				m("dinner_5_dialog_0048");
 			}
 			break;
 	}
 
-	f("string_0052");
-	f("string_0053");
-	m("string_0054");
+	f("dinner_5_dialog_0052");
+	f("dinner_5_dialog_0053");
+	m("dinner_5_dialog_0054");
 
 	Choose({
 		"dinner_5_choice_4_entry_0000": function(message){
 			n(message);
-			f("string_0055");
+			f("dinner_5_dialog_0055");
 			Getting_A_Tutor_2();
 		},
 		"dinner_5_choice_4_entry_0001": function(message){
@@ -220,8 +216,8 @@ function Getting_A_Tutor(){
 		},
 		"dinner_5_choice_4_entry_0002": function(message){
 			n(message);
-			f("string_0056");
-			n("string_0057");
+			f("dinner_5_dialog_0056");
+			n("dinner_5_dialog_0057");
 			Getting_A_Tutor_2();
 		}
 	});
@@ -230,44 +226,44 @@ function Getting_A_Tutor(){
 
 function Getting_A_Tutor_2(){
 
-	f("string_0058");
-	f("string_0059");
+	f("dinner_5_dialog_0058");
+	f("dinner_5_dialog_0059");
 
-	n("string_0060");
-	f("string_0061");
+	n("dinner_5_dialog_0060");
+	f("dinner_5_dialog_0061");
 
 	if($.changing_schools){
-		m("string_0062");
-		m("string_0063");
+		m("dinner_5_dialog_0062");
+		m("dinner_5_dialog_0063");
 	}
 	if($.studying_subject!=$.studying_subject_2){
-		m("string_0064", tr('dinner_2', $.studying_subject), tr('dinner_2', $.studying_subject_2));
+		m("dinner_5_dialog_0064", $.studying_subject, $.studying_subject_2);
 	}else{
-		m("string_0065", tr('dinner_2', $.studying_subject));
+		m("dinner_5_dialog_0065", $.studying_subject);
 	}
 
-	f("string_0066");
-	m("string_0067");
-	f("string_0068");
-	m("string_0009");
+	f("dinner_5_dialog_0066");
+	m("dinner_5_dialog_0067");
+	f("dinner_5_dialog_0068");
+	m("dinner_5_dialog_0009");
 
 	Show("dad","dad_threat");
 
-	f("string_0069");
+	f("dinner_5_dialog_0069");
 	if($.changing_schools){
-		f("string_0070");
+		f("dinner_5_dialog_0070");
 	}else{
-		f("string_0071");
+		f("dinner_5_dialog_0071");
 	}
 
-	n("string_0072");
-	f("string_0073");
-	f("string_0074");
+	n("dinner_5_dialog_0072");
+	f("dinner_5_dialog_0073");
+	f("dinner_5_dialog_0074");
 
-	n("string_0009");
+	n("dinner_5_dialog_0009");
 
 	Choose({
-		"string_0136": Agree_With_Dad,
+		"dinner_5_dialog_0136": Agree_With_Dad,
 		"No.": Argue_With_Dad
 	});
 
@@ -275,29 +271,29 @@ function Getting_A_Tutor_2(){
 
 function Agree_With_Dad(){
 
-	n("string_0075");
+	n("dinner_5_dialog_0075");
 
-	f("string_0076");
-	f("string_0077");
-	f("string_0078");
-	m("string_0009");
-	n("string_0009");
+	f("dinner_5_dialog_0076");
+	f("dinner_5_dialog_0077");
+	f("dinner_5_dialog_0078");
+	m("dinner_5_dialog_0009");
+	n("dinner_5_dialog_0009");
 
-	f("string_0079");
-	f("string_0080");
+	f("dinner_5_dialog_0079");
+	f("dinner_5_dialog_0080");
 
 	Choose({
 		"dinner_5_choice_5_entry_0000": function(message){
 
 			n(message);
 
-			f("string_0081");
-			f("string_0082");
+			f("dinner_5_dialog_0081");
+			f("dinner_5_dialog_0082");
 
 			Show("dad","dad_serious");
 
-			f("string_0083");
-			n("string_0009");
+			f("dinner_5_dialog_0083");
+			n("dinner_5_dialog_0009");
 			Agreeable_Ending();
 
 		},
@@ -306,8 +302,8 @@ function Agree_With_Dad(){
 			n(message);
 
 			Show("mom","mom_cry");
-			m("string_0084");
-			f("string_0009");
+			m("dinner_5_dialog_0084");
+			f("dinner_5_dialog_0009");
 			Argument_Ending();
 
 		},
@@ -315,17 +311,17 @@ function Agree_With_Dad(){
 
 			n(message);
 
-			m("string_0085");
-			f("string_0009");
-			f("string_0086");
-			m("string_0087");
-			f("string_0088");
-			n("string_0089");
+			m("dinner_5_dialog_0085");
+			f("dinner_5_dialog_0009");
+			f("dinner_5_dialog_0086");
+			m("dinner_5_dialog_0087");
+			f("dinner_5_dialog_0088");
+			n("dinner_5_dialog_0089");
 
 			Show("dad","dad_serious");
 
-			f("string_0090");
-			n("string_0006");
+			f("dinner_5_dialog_0090");
+			n("dinner_5_dialog_0006");
 			Agreeable_Ending();
 
 		}
@@ -337,44 +333,44 @@ function Agreeable_Ending(){
 
 	$.father_oblivious = true;
 
-	f("string_0091");
+	f("dinner_5_dialog_0091");
 
 	Show("nicky","dinner_nicky_sit");
-	n("string_0009");
-	f("string_0092");
-	f("string_0093");
+	n("dinner_5_dialog_0009");
+	f("dinner_5_dialog_0092");
+	f("dinner_5_dialog_0093");
 
 	Choose({
 		"dinner_5_choice_6_entry_0000": function(message){
 			n(message);
-			f("string_0094");
-			f("string_0095");
-			n("string_0096");
-			f("string_0097");
-			f("string_0098");
-			n("string_0099");
+			f("dinner_5_dialog_0094");
+			f("dinner_5_dialog_0095");
+			n("dinner_5_dialog_0096");
+			f("dinner_5_dialog_0097");
+			f("dinner_5_dialog_0098");
+			n("dinner_5_dialog_0099");
 			Dinner_Ending();
 		},
 		"dinner_5_choice_6_entry_0001": function(message){
 			n(message);
-			f("string_0100");
-			n("string_0101");
+			f("dinner_5_dialog_0100");
+			n("dinner_5_dialog_0101");
 			if($.studying_subject!=$.studying_subject_2){
-				f("string_0102", tr('dinner_2', $.studying_subject), tr('dinner_2', $.studying_subject_2));
+				f("dinner_5_dialog_0102", $.studying_subject, $.studying_subject_2);
 			}else{
-				f("string_0103", tr('dinner_2', $.studying_subject));
+				f("dinner_5_dialog_0103", $.studying_subject);
 			}
-			f("string_0104");
-			f("string_0105");
-			n("string_0006");
+			f("dinner_5_dialog_0104");
+			f("dinner_5_dialog_0105");
+			n("dinner_5_dialog_0006");
 			Dinner_Ending();
 		},
 		"dinner_5_choice_6_entry_0002": function(message){
 			n(message);
-			f("string_0106");
-			f("string_0107");
-			n("string_0108");
-			n("string_0109");
+			f("dinner_5_dialog_0106");
+			f("dinner_5_dialog_0107");
+			n("dinner_5_dialog_0108");
+			n("dinner_5_dialog_0109");
 			Dinner_Ending();
 		}
 	});
@@ -383,12 +379,12 @@ function Agreeable_Ending(){
 
 function Argue_With_Dad(){
 
-	n("string_0110");
+	n("dinner_5_dialog_0110");
 
-	f("string_0111");
-	n("string_0112");
-	f("string_0113");
-	n("string_0114");
+	f("dinner_5_dialog_0111");
+	n("dinner_5_dialog_0112");
+	f("dinner_5_dialog_0113");
+	n("dinner_5_dialog_0114");
 
 	Choose({
 		"dinner_5_choice_7_entry_0000": function(message){
@@ -396,10 +392,10 @@ function Argue_With_Dad(){
 			n(message);
 
 			Show("mom","mom_cry");
-			m("string_0084");
+			m("dinner_5_dialog_0084");
 
-			m("string_0115");
-			f("string_0116");
+			m("dinner_5_dialog_0115");
+			f("dinner_5_dialog_0116");
 			Argument_Ending();
 		},
 		"dinner_5_choice_7_entry_0001": function(message){
@@ -407,13 +403,13 @@ function Argue_With_Dad(){
 			n(message);
 
 			Show("mom","mom_cry");
-			m("string_0084");
+			m("dinner_5_dialog_0084");
 
-			f("string_0117");
+			f("dinner_5_dialog_0117");
 			if($.hippies){
-				m("string_0118");
+				m("dinner_5_dialog_0118");
 			}
-			f("string_0119");
+			f("dinner_5_dialog_0119");
 			Argument_Ending();
 		},
 		"dinner_5_choice_7_entry_0002": function(message){
@@ -421,13 +417,13 @@ function Argue_With_Dad(){
 			n(message);
 
 			Show("mom","mom_cry");
-			m("string_0084");
+			m("dinner_5_dialog_0084");
 
-			m("string_0120");
+			m("dinner_5_dialog_0120");
 			if($.hippies){
-				m("string_0118");
+				m("dinner_5_dialog_0118");
 			}
-			f("string_0119");
+			f("dinner_5_dialog_0119");
 			Argument_Ending();
 		}
 	});
@@ -438,59 +434,59 @@ function Argument_Ending(){
 
 	$.father_oblivious = false;
 
-	n("string_0009");
+	n("dinner_5_dialog_0009");
 
 	if($.top_or_bottom=="top"){
-		m("string_0121");
+		m("dinner_5_dialog_0121");
 	}
 	switch($.what_are_you){
 		case "bisexual":
-			m("string_0122");
-			n("string_0009");
+			m("dinner_5_dialog_0122");
+			n("dinner_5_dialog_0009");
 			break;
 		case "confused":
-			m("string_0123");
-			f("string_0124");
-			n("string_0009");
+			m("dinner_5_dialog_0123");
+			f("dinner_5_dialog_0124");
+			n("dinner_5_dialog_0009");
 			break;
 		case "son":
-			n("string_0125");
+			n("dinner_5_dialog_0125");
 			break;
 	}
 
-	f("string_0126");
-	n("string_0009");
-	m("string_0127");
+	f("dinner_5_dialog_0126");
+	n("dinner_5_dialog_0009");
+	m("dinner_5_dialog_0127");
 
-	f("string_0128");
-	n("string_0009");
-	m("string_0129");
+	f("dinner_5_dialog_0128");
+	n("dinner_5_dialog_0009");
+	m("dinner_5_dialog_0129");
 
-	f("string_0130");
-	n("string_0009");
+	f("dinner_5_dialog_0130");
+	n("dinner_5_dialog_0009");
 
 	Show("mom","mom_sit");
 	if($.crying=="anger"){
-		m("string_0131");
-		f("string_0132");
+		m("dinner_5_dialog_0131");
+		f("dinner_5_dialog_0132");
 	}
 	if($.crying=="mocking"){
-		m("string_0133");
-		f("string_0132");
+		m("dinner_5_dialog_0133");
+		f("dinner_5_dialog_0132");
 	}
 
-	f("string_0134");
-	f("string_0135");
+	f("dinner_5_dialog_0134");
+	f("dinner_5_dialog_0135");
 
 	Choose({
 		"dinner_5_choice_8_entry_0000": function(message){
 
-			n("string_0136");
-			n("string_0137");
-			n("string_0138");
+			n("dinner_5_dialog_0136");
+			n("dinner_5_dialog_0137");
+			n("dinner_5_dialog_0138");
 
 			Show("nicky","dinner_nicky_outrage");
-			n("string_0139");
+			n("dinner_5_dialog_0139");
 
 			Dinner_Ending_Punch();
 
@@ -498,24 +494,24 @@ function Argument_Ending(){
 		"dinner_5_choice_8_entry_0001": function(message){
 
 			n(message);
-			f("string_0140");
-			n("string_0009");
+			f("dinner_5_dialog_0140");
+			n("dinner_5_dialog_0009");
 
 			Show("dad","dad_serious");
 
-			m("string_0141");
-			f("string_0142");
+			m("dinner_5_dialog_0141");
+			f("dinner_5_dialog_0142");
 
 			Show("dad",null);
 
-			f("string_0143");
+			f("dinner_5_dialog_0143");
 			PlaySound("sfx","dinner_door");
 
-			m("string_0009");
+			m("dinner_5_dialog_0009");
 
 			Show("mom","mom_cry");
 
-			m("string_0144");
+			m("dinner_5_dialog_0144");
 
 			Dinner_Ending();
 
@@ -523,14 +519,14 @@ function Argument_Ending(){
 		"dinner_5_choice_8_entry_0002": function(message){
 
 			n(message);
-			f("string_0009");
-			m("string_0145");
-			f("string_0146");
-			m("string_0147");
-			f("string_0148");
-			m("string_0149");
-			f("string_0150");
-			m("string_0151");
+			f("dinner_5_dialog_0009");
+			m("dinner_5_dialog_0145");
+			f("dinner_5_dialog_0146");
+			m("dinner_5_dialog_0147");
+			f("dinner_5_dialog_0148");
+			m("dinner_5_dialog_0149");
+			f("dinner_5_dialog_0150");
+			m("dinner_5_dialog_0151");
 
 			Dinner_Ending_Punch();
 

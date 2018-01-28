@@ -10,9 +10,6 @@ function Start_Outro(){
 
 	/////// SET UP SCENE ////////
 
-    N("outro");
-    p("outro");
-
 	Show("background","coffeehouse_2");
 	Show("cup","cup_steam",{x:44,y:359});
 	Show("nicky","coffee_nicky_still");
@@ -22,37 +19,37 @@ function Start_Outro(){
 	///////////////////////////////
 
 	if($.breaking_up_soon){
-		N("string_0000");
+		N("outro_dialog_0000");
 	}else{
-		N("string_0001");
+		N("outro_dialog_0001");
 	}
 
 	// Weave - intro
 	if($.main_menu_convo_1==1){
-		p("string_0002");
-		N("string_0003");
+		p("outro_dialog_0002");
+		N("outro_dialog_0003");
 	}else if($.main_menu_convo_1==3){
-		p("string_0002");
-		N("string_0004");
+		p("outro_dialog_0002");
+		N("outro_dialog_0004");
 	}else if($.main_menu_convo_2==1){
-		p("string_0002");
-		N("string_0005");
+		p("outro_dialog_0002");
+		N("outro_dialog_0005");
 	}
 
 	Choose({
 		"outro_choice_1_entry_0000":function(message){
 			p(message);
-			N("string_0006");
+			N("outro_dialog_0006");
 			Closure();
 		},
 		"outro_choice_1_entry_0001":function(message){
 			p(message);
-			N("string_0007");
+			N("outro_dialog_0007");
 			Closure();
 		},
 		"outro_choice_1_entry_0002":function(message){
 			p(message);
-			N("string_0008");
+			N("outro_dialog_0008");
 			Closure();
 		}
 	});
@@ -65,27 +62,27 @@ function Closure(){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
-	p("string_0009");
-	p("string_0010");
+	p("outro_dialog_0009");
+	p("outro_dialog_0010");
 
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("string_0011");
-	N("string_0012");
-	N("string_0013");
-	N("string_0014");
+	N("outro_dialog_0011");
+	N("outro_dialog_0012");
+	N("outro_dialog_0013");
+	N("outro_dialog_0014");
 
 	if($.main_menu_convo_2==3){
-		N("string_0015");
+		N("outro_dialog_0015");
 	}
 
-	p("string_0016");
-	N("string_0017");
-	N("string_0018");
+	p("outro_dialog_0016");
+	N("outro_dialog_0017");
+	N("outro_dialog_0018");
 
 	if($.main_menu_convo_2==2){
-		N("string_0019");
+		N("outro_dialog_0019");
 	}
 
 	$.coming_out_stories_left = 3;
@@ -94,21 +91,21 @@ function Closure(){
 	Choose({
 		"outro_choice_2_entry_0000": function(message){
 			p(message);
-			N("string_0020");
-			N("string_0021");
-			p("string_0022");
+			N("outro_dialog_0020");
+			N("outro_dialog_0021");
+			p("outro_dialog_0022");
 			Closure_Story();
 		},
 		"outro_choice_2_entry_0001": function(message){
 			p(message);
-			N("string_0023");
-			p("string_0022");
+			N("outro_dialog_0023");
+			p("outro_dialog_0022");
 			Closure_Story();
 		},
 		"outro_choice_2_entry_0002": function(message){
 			p(message);
-			N("string_0024");
-			p("string_0025");
+			N("outro_dialog_0024");
+			p("outro_dialog_0025");
 			Closure_Story();
 		}
 	});
@@ -118,12 +115,12 @@ function Closure(){
 function Closure_Story(){
 
 	if($.coming_out_stories_left==3){
-		N("string_0026");
-		N("string_0027");
+		N("outro_dialog_0026");
+		N("outro_dialog_0027");
 	}else if($.coming_out_stories_left==2){
-		N("string_0028");
+		N("outro_dialog_0028");
 	}else if($.coming_out_stories_left==1){
-		N("string_0029");
+		N("outro_dialog_0029");
 	}else{
 		Finale_1();
 		return;
@@ -142,10 +139,10 @@ function Closure_Story(){
 function Is_Last_Story(){
 	if($.coming_out_stories_left==0){
 		if($.asked_about && $.asked_credits){
-			p("string_0030");
+			p("outro_dialog_0030");
 		}else{
-			p("string_0031");
-			N("string_0032");
+			p("outro_dialog_0031");
+			N("outro_dialog_0032");
 		}
 	}
 }
@@ -164,19 +161,19 @@ function Tell_Me_A_Lie(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("string_0033");
+	N("outro_dialog_0033");
 	Is_Last_Story();
 
-	N("string_0034");
+	N("outro_dialog_0034");
 	if($.im_a_poet){
-		N("string_0035");
+		N("outro_dialog_0035");
 	}else{
-		N("string_0036");
+		N("outro_dialog_0036");
 	}
-	N("string_0037");
-	p("string_0002");
-	N("string_0038");
-	N("string_0039");
+	N("outro_dialog_0037");
+	p("outro_dialog_0002");
+	N("outro_dialog_0038");
+	N("outro_dialog_0039");
 
 	// FAMILY WITH BENEFITS
 	// Weave in -- top or bottom
@@ -185,48 +182,48 @@ function Tell_Me_A_Lie(message){
 		"outro_choice_4_entry_0000": function(message){
 			$.outro_convo_lie = 1;
 			p(message);
-			N("string_0040");
+			N("outro_dialog_0040");
 			Tell_Me_A_Lie_2();
 		},
 		"outro_choice_4_entry_0001": function(message){
 			$.outro_convo_lie = 2;
 			p(message);
-			N("string_0041");
+			N("outro_dialog_0041");
 			Tell_Me_A_Lie_2();
 		},
 		"outro_choice_4_entry_0002": function(message){
 			$.outro_convo_lie = 3;
 			p(message);
-			N("string_0042");
+			N("outro_dialog_0042");
 			Tell_Me_A_Lie_2();
 		}
 	});
 }
 function Tell_Me_A_Lie_2(){
 
-	N("string_0043");
+	N("outro_dialog_0043");
 
 	if($.outro_convo_lie==1){
-		p("string_0044");
+		p("outro_dialog_0044");
 	}
 
 	switch($.top_or_bottom){
-		case "top": N("string_0045"); break;
-		case "bottom": N("string_0046"); break;
-		case "versatile": N("string_0047"); break;
+		case "top": N("outro_dialog_0045"); break;
+		case "bottom": N("outro_dialog_0046"); break;
+		case "versatile": N("outro_dialog_0047"); break;
 	}
 
-	N("string_0048");
+	N("outro_dialog_0048");
 
 	switch($.outro_convo_lie){
-		case 2: p("string_0049"); break;
-		case 3: p("string_0050"); break;
+		case 2: p("outro_dialog_0049"); break;
+		case 3: p("outro_dialog_0050"); break;
 	}
 
-	N("string_0051");
-	N("string_0052");
+	N("outro_dialog_0051");
+	N("outro_dialog_0052");
 
-	p("string_0002");
+	p("outro_dialog_0002");
 
 	Closure_Story();
 
@@ -248,43 +245,43 @@ function Tell_Me_A_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("string_0053");
+	N("outro_dialog_0053");
 	Is_Last_Story();
 
-	N("string_0054");
+	N("outro_dialog_0054");
 	switch($.inception_answer){
-		case "awake": N("string_0055"); break;
-		case "dream": N("string_0056"); break;
-		case "neither": N("string_0057"); break;
+		case "awake": N("outro_dialog_0055"); break;
+		case "dream": N("outro_dialog_0056"); break;
+		case "neither": N("outro_dialog_0057"); break;
 	}
-	N("string_0058");
-	N("string_0059");
+	N("outro_dialog_0058");
+	N("outro_dialog_0059");
 
 	Choose({
 		"outro_choice_5_entry_0000": function(message){
 			$.outro_convo_truth = 3;
 			p(message);
 
-			N("string_0060");
-			N("string_0061");
-			p("string_0062");
+			N("outro_dialog_0060");
+			N("outro_dialog_0061");
+			p("outro_dialog_0062");
 			Tell_Me_A_Truth_2();
 		},
 		"outro_choice_5_entry_0001": function(message){
 			$.outro_convo_truth = 2;
 			p(message);
 
-			N("string_0063");
-			p("string_0064");
+			N("outro_dialog_0063");
+			p("outro_dialog_0064");
 			Tell_Me_A_Truth_2();
 		},
 		"outro_choice_5_entry_0002": function(message){
 			$.outro_convo_truth = 1;
 			p(message);
 
-			N("string_0065");
-			N("string_0066");
-			p("string_0067");
+			N("outro_dialog_0065");
+			N("outro_dialog_0066");
+			p("outro_dialog_0067");
 			Tell_Me_A_Truth_2();
 		}
 	});
@@ -292,17 +289,17 @@ function Tell_Me_A_Truth(message){
 }
 function Tell_Me_A_Truth_2(){
 
-	N("string_0068");
-	N("string_0069");
+	N("outro_dialog_0068");
+	N("outro_dialog_0069");
 
-	N("string_0070");
-	N("string_0071");
-	N("string_0072");
+	N("outro_dialog_0070");
+	N("outro_dialog_0071");
+	N("outro_dialog_0072");
 
 	switch($.outro_convo_truth){
-		case 1: p("string_0073"); break;
-		case 2: p("string_0074"); break;
-		case 3: p("string_0075"); break;
+		case 1: p("outro_dialog_0073"); break;
+		case 2: p("outro_dialog_0074"); break;
+		case 3: p("outro_dialog_0075"); break;
 	}
 
 	Closure_Story();
@@ -324,16 +321,16 @@ function Tell_Me_A_Half_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("string_0076");
+	N("outro_dialog_0076");
 	Is_Last_Story();
 
-	N("string_0077");
-	N("string_0078", tr('dinner_2', $.studying_subject));
+	N("outro_dialog_0077");
+	N("outro_dialog_0078", $.studying_subject);
 
-	p("string_0079");
+	p("outro_dialog_0079");
 
-	N("string_0080");
-	N("string_0081");
+	N("outro_dialog_0080");
+	N("outro_dialog_0081");
 
 	// CLAIRE AND I HELPED EACH OTHER EXPLORE OURSELVES, LESS GUILT, MORE EXPERIENCE.
 	// Weave in -- studying what
@@ -342,9 +339,9 @@ function Tell_Me_A_Half_Truth(message){
 		"outro_choice_6_entry_0000": function(message){
 			$.outro_convo_half_truth = 1;
 			p(message);
-			N("string_0082");
-			p("string_0083");
-			N("string_0084");
+			N("outro_dialog_0082");
+			p("outro_dialog_0083");
+			N("outro_dialog_0084");
 			Tell_Me_A_Half_Truth_2();
 		},
 		"outro_choice_6_entry_0001": function(message){
@@ -355,9 +352,9 @@ function Tell_Me_A_Half_Truth(message){
 		"outro_choice_6_entry_0002": function(message){
 			$.outro_convo_half_truth = 2;
 			p(message);
-			N("string_0085");
-			p("string_0086");
-			N("string_0084");
+			N("outro_dialog_0085");
+			p("outro_dialog_0086");
+			N("outro_dialog_0084");
 			Tell_Me_A_Half_Truth_2();
 		}
 	});
@@ -365,23 +362,23 @@ function Tell_Me_A_Half_Truth(message){
 }
 function Tell_Me_A_Half_Truth_2(){
 
-	N("string_0087");
-	N("string_0088");
-	p("string_0089");
+	N("outro_dialog_0087");
+	N("outro_dialog_0088");
+	p("outro_dialog_0089");
 
 	if($.changing_schools || !$.father_oblivious){
-		N("string_0090");
+		N("outro_dialog_0090");
 	}
 
-	N("string_0091");
-	N("string_0092");
-	N("string_0093");
+	N("outro_dialog_0091");
+	N("outro_dialog_0092");
+	N("outro_dialog_0093");
 
-	p("string_0094");
+	p("outro_dialog_0094");
 
-	N("string_0095");
+	N("outro_dialog_0095");
 
-	p("string_0002");
+	p("outro_dialog_0002");
 
 	Closure_Story();
 
@@ -393,7 +390,7 @@ function Tell_Me_A_Half_Truth_2(){
 
 function Finale_1(){
 
-	N("string_0096");
+	N("outro_dialog_0096");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -408,36 +405,36 @@ function Finale_1(){
 
 	//////////////////////////
 
-	N("string_0097");
+	N("outro_dialog_0097");
 	if($.order_of_stories[0]=="truth"){
-		N("string_0098");
+		N("outro_dialog_0098");
 	}else if($.order_of_stories[2]=="truth"){
-		N("string_0099");
+		N("outro_dialog_0099");
 	}else if($.order_of_stories[0]=="lie"){
-		N("string_0100");
+		N("outro_dialog_0100");
 	}else{
-		N("string_0101");
+		N("outro_dialog_0101");
 	}
-	N("string_0102");
-	p("string_0002");
+	N("outro_dialog_0102");
+	p("outro_dialog_0002");
 
-	p("string_0103");
-	N("string_0104");
+	p("outro_dialog_0103");
+	N("outro_dialog_0104");
 
 	Choose({
 		"outro_choice_7_entry_0000": function(message){
 			p(message);
-			N("string_0105");
+			N("outro_dialog_0105");
 			Finale_2();
 		},
 		"outro_choice_7_entry_0001": function(message){
 			p(message);
-			N("string_0106");
+			N("outro_dialog_0106");
 			Finale_2();
 		},
 		"outro_choice_7_entry_0002": function(message){
 			p(message);
-			N("string_0107");
+			N("outro_dialog_0107");
 			Finale_2();
 		}
 	});
@@ -448,10 +445,10 @@ function Finale_2(){
 
 	Show("nicky","coffee_nicky_packup_1");
 
-	N("string_0002");
-	N("string_0108");
-	N("string_0109");
-	N("string_0110");
+	N("outro_dialog_0002");
+	N("outro_dialog_0108");
+	N("outro_dialog_0109");
+	N("outro_dialog_0110");
 
 	Show("nicky","coffee_nicky_packup_2");
 
@@ -459,19 +456,19 @@ function Finale_2(){
 	PlaySound("sfx","laptop_shut");
 	PlaySound("bg","bedroom_1",{loop:-1, volume:0.4});
 
-	p("string_0111");
+	p("outro_dialog_0111");
 
 	if($.punched){
-		N("string_0112");
+		N("outro_dialog_0112");
 	}else if($.father_oblivious==false){
-		N("string_0113");
+		N("outro_dialog_0113");
 	}else if($.changing_schools){
-		N("string_0114");
+		N("outro_dialog_0114");
 	}else{
-		N("string_0115");
+		N("outro_dialog_0115");
 	}
 
-	N("string_0116");
+	N("outro_dialog_0116");
 
 	Choose({
 		"what.": Finale_3,
@@ -488,28 +485,28 @@ function Finale_3(message){
 	PlaySound("sfx","laptop_pack");
 	Show("nicky","coffee_nicky_packup_3");
 
-	N("string_0117");
-	N("string_0118");
+	N("outro_dialog_0117");
+	N("outro_dialog_0118");
 
 	PlaySound("sfx","laptop_pack_2");
 	Show("nicky","coffee_nicky_packup_4");
 
-	N("string_0119");
-	N("string_0120");
-	N("string_0121");
+	N("outro_dialog_0119");
+	N("outro_dialog_0120");
+	N("outro_dialog_0121");
 
-	p("string_0002");
+	p("outro_dialog_0002");
 
-	N("string_0122");
-	N("string_0123");
-	N("string_0124");
-	N("string_0125");
+	N("outro_dialog_0122");
+	N("outro_dialog_0123");
+	N("outro_dialog_0124");
+	N("outro_dialog_0125");
 
-	p("string_0002");
+	p("outro_dialog_0002");
 
-	N("string_0126");
-	N("string_0002");
-	N("string_0126");
+	N("outro_dialog_0126");
+	N("outro_dialog_0002");
+	N("outro_dialog_0126");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -547,7 +544,7 @@ function Finale_3(message){
 function Finale_4(message){
 
 	p(message);
-	N("string_0127");
+	N("outro_dialog_0127");
 
 	Wait(800);
 	queue(function(){

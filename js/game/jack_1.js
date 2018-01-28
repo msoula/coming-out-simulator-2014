@@ -10,9 +10,6 @@ function Start_Jack_1(){
 
 	/////// SET UP SCENE ////////
 
-    j("jack_1");
-    n("jack_1");
-
 	Show("background","bedroom");
 	Show("us","bedroom_us_1");
 	Show("light","bedroom_light_1",{x:0,y:159});
@@ -21,13 +18,13 @@ function Start_Jack_1(){
 
 	/////////////////////////////
 
-	j("string_0000");
-	j("string_0001");
-	j("string_0002");
-	n("string_0003");
-	n("string_0004");
-	j("string_0005");
-	j("string_0006");
+	j("jack_1_dialog_0000");
+	j("jack_1_dialog_0001");
+	j("jack_1_dialog_0002");
+	n("jack_1_dialog_0003");
+	n("jack_1_dialog_0004");
+	j("jack_1_dialog_0005");
+	j("jack_1_dialog_0006");
 
 	Choose({
 		"jack_1_choice_1_entry_0000": Inception_Dream,
@@ -42,9 +39,9 @@ function Inception_Dream(message){
 	$.inception_answer = "dream";
 
 	n(message);
-	j("string_0007");
-	n("string_0008");
-	j("string_0009");
+	j("jack_1_dialog_0007");
+	n("jack_1_dialog_0008");
+	j("jack_1_dialog_0009");
 
 	Choose({
 		"jack_1_choice_2_entry_0000": Sadsack,
@@ -52,20 +49,20 @@ function Inception_Dream(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("string_0010");
-			n("string_0011");
-			n("string_0012");
-			j("string_0013");
-			n("string_0014");
+			j("jack_1_dialog_0010");
+			n("jack_1_dialog_0011");
+			n("jack_1_dialog_0012");
+			j("jack_1_dialog_0013");
+			n("jack_1_dialog_0014");
 			Thanks();
 		},
 		"jack_1_choice_2_entry_0002": function(message){
 			$.hippies = true;
 
 			n(message);
-			j("string_0015");
-			n("string_0016");
-			n("string_0014");
+			j("jack_1_dialog_0015");
+			n("jack_1_dialog_0016");
+			n("jack_1_dialog_0014");
 			Thanks();
 		}
 	});
@@ -77,10 +74,10 @@ function Inception_Awake(message){
 	$.im_a_poet = true;
 
 	n(message);
-	n("string_0017");
-	n("string_0018");
-	j("string_0010");
-	j("string_0019");
+	n("jack_1_dialog_0017");
+	n("jack_1_dialog_0018");
+	j("jack_1_dialog_0010");
+	j("jack_1_dialog_0019");
 
 	Choose({
 		"jack_1_choice_3_entry_0000": function(message){
@@ -89,14 +86,14 @@ function Inception_Awake(message){
 		},
 		"jack_1_choice_3_entry_0001": function(message){
 			n(message);
-			j("string_0020");
-			n("string_0021");
-			n("string_0014");
+			j("jack_1_dialog_0020");
+			n("jack_1_dialog_0021");
+			n("jack_1_dialog_0014");
 			Thanks();
 		},
 		"jack_1_choice_3_entry_0002": function(message){
 			n(message);
-			j("string_0022");
+			j("jack_1_dialog_0022");
 			Thanks();
 		}
 	});
@@ -107,22 +104,22 @@ function Inception_Neither(message){
 	$.inception_answer = "neither";
 
 	n(message);
-	j("string_0023");
-	n("string_0024");
-	n("string_0025");
-	n("string_0026");
-	j("string_0027");
+	j("jack_1_dialog_0023");
+	n("jack_1_dialog_0024");
+	n("jack_1_dialog_0025");
+	n("jack_1_dialog_0026");
+	j("jack_1_dialog_0027");
 
 	Choose({
 		"jack_1_choice_4_entry_0000": function(message){
 
 			$.im_a_poet = true;
 
-			n("string_0028");
-			n("string_0029");
-			j("string_0030");
-			n("string_0031");
-			n("string_0014");
+			n("jack_1_dialog_0028");
+			n("jack_1_dialog_0029");
+			j("jack_1_dialog_0030");
+			n("jack_1_dialog_0031");
+			n("jack_1_dialog_0014");
 			Thanks();
 
 		},
@@ -133,10 +130,10 @@ function Inception_Neither(message){
 			$.im_a_poet = true;
 
 			n(message);
-			n("string_0032");
-			j("string_0033");
-			n("string_0034");
-			n("string_0014");
+			n("jack_1_dialog_0032");
+			j("jack_1_dialog_0033");
+			n("jack_1_dialog_0034");
+			n("jack_1_dialog_0014");
 			Thanks();
 
 		}
@@ -149,35 +146,35 @@ function Sadsack(message){
 	$.sadsack = true;
 
 	n(message);
-	j("string_0035");
-	j("string_0036");
-	n("string_0037");
+	j("jack_1_dialog_0035");
+	j("jack_1_dialog_0036");
+	n("jack_1_dialog_0037");
 	Thanks();
 
 }
 
 function Thanks(){
 
-	n("string_0038");
-	j("string_0039");
-	j("string_0040");
-	n("string_0041");
-	n("string_0042");
+	n("jack_1_dialog_0038");
+	j("jack_1_dialog_0039");
+	j("jack_1_dialog_0040");
+	n("jack_1_dialog_0041");
+	n("jack_1_dialog_0042");
 
-	j("string_0043");
-	n("string_0044");
+	j("jack_1_dialog_0043");
+	n("jack_1_dialog_0044");
 
-	j("string_0045");
-	n("string_0046");
+	j("jack_1_dialog_0045");
+	n("jack_1_dialog_0046");
 
-	j("string_0047");
-	n("string_0048");
+	j("jack_1_dialog_0047");
+	n("jack_1_dialog_0048");
 
 	Choose({
 		"jack_1_choice_5_entry_0000": function(message){
 			$.coming_out_readiness="no";
 			n(message);
-			j("string_0049");
+			j("jack_1_dialog_0049");
 			Hiding();
 		},
 		"jack_1_choice_5_entry_0001": function(message){
@@ -188,7 +185,7 @@ function Thanks(){
 		"jack_1_choice_5_entry_0002": function(message){
 			$.coming_out_readiness="maybe";
 			n(message);
-			j("string_0050");
+			j("jack_1_dialog_0050");
 			Hiding();
 		}
 	});
@@ -197,35 +194,35 @@ function Thanks(){
 
 function Hiding(){
 
-	j("string_0051");
+	j("jack_1_dialog_0051");
 
 	if($.inception_answer=="awake"){
-		j("string_0052");
+		j("jack_1_dialog_0052");
 	}
 	if($.inception_answer=="dream"){
-		j("string_0053");
+		j("jack_1_dialog_0053");
 	}
 
 	if($.sadsack){
-		j("string_0054");
-		j("string_0055");
+		j("jack_1_dialog_0054");
+		j("jack_1_dialog_0055");
 	}
 
-	n("string_0056");
-	j("string_0057");
+	n("jack_1_dialog_0056");
+	j("jack_1_dialog_0057");
 	if($.hippies){
-		n("string_0058");
-		n("string_0059");
-		n("string_0060");
-		j("string_0061");
-		n("string_0062");
-		j("string_0063");
+		n("jack_1_dialog_0058");
+		n("jack_1_dialog_0059");
+		n("jack_1_dialog_0060");
+		j("jack_1_dialog_0061");
+		n("jack_1_dialog_0062");
+		j("jack_1_dialog_0063");
 	}else{
-		j("string_0064");
+		j("jack_1_dialog_0064");
 	}
 
-	j("string_0065");
-	j("string_0066");
+	j("jack_1_dialog_0065");
+	j("jack_1_dialog_0066");
 
 	Choose({
 		"jack_1_choice_6_entry_0000": Hiding_2,
@@ -240,31 +237,31 @@ function Hiding_2(message){
 	n(message);
 
 	if($.coming_out_readiness=="no"){
-		n("string_0067");
+		n("jack_1_dialog_0067");
 	}
 
-	j("string_0068");
-	j("string_0069");
-	j("string_0070");
+	j("jack_1_dialog_0068");
+	j("jack_1_dialog_0069");
+	j("jack_1_dialog_0070");
 
-	n("string_0071");
+	n("jack_1_dialog_0071");
 
-	j("string_0072");
-	j("string_0073");
+	j("jack_1_dialog_0072");
+	j("jack_1_dialog_0073");
 
 	if($.im_a_poet){
-		n("string_0074");
+		n("jack_1_dialog_0074");
 	}else{
-		n("string_0075");
+		n("jack_1_dialog_0075");
 	}
 
 	if($.coming_out_readiness=="yes"){
-		j("string_0076");
-		j("string_0077");
+		j("jack_1_dialog_0076");
+		j("jack_1_dialog_0077");
 	}else{
-		j("string_0078");
+		j("jack_1_dialog_0078");
 	}
-	j("string_0079");
+	j("jack_1_dialog_0079");
 
 	Choose({
 		"jack_1_choice_7_entry_0000": Hiding_3,
@@ -277,36 +274,36 @@ function Hiding_2(message){
 function Hiding_3(message){
 
 	n(message);
-	j("string_0080");
-	n("string_0081");
-	n("string_0082");
-	n("string_0083");
-	j("string_0080");
-	n("string_0084");
+	j("jack_1_dialog_0080");
+	n("jack_1_dialog_0081");
+	n("jack_1_dialog_0082");
+	n("jack_1_dialog_0083");
+	j("jack_1_dialog_0080");
+	n("jack_1_dialog_0084");
 
-	j("string_0085");
-	n("string_0086");
-	j("string_0087");
+	j("jack_1_dialog_0085");
+	n("jack_1_dialog_0086");
+	j("jack_1_dialog_0087");
 	switch($.inception_answer){
-		case "dream": j("string_0088"); break;
-		case "awake": j("string_0089"); break;
-		case "neither": j("string_0090"); break;
+		case "dream": j("jack_1_dialog_0088"); break;
+		case "awake": j("jack_1_dialog_0089"); break;
+		case "neither": j("jack_1_dialog_0090"); break;
 	}
-	n("string_0091");
-	j("string_0092");
+	n("jack_1_dialog_0091");
+	j("jack_1_dialog_0092");
 	if($.coming_out_readiness=="maybe"){
-		j("string_0093");
+		j("jack_1_dialog_0093");
 	}
-	j("string_0094");
+	j("jack_1_dialog_0094");
 
 	var insult = "";
-	if($.hippies) insult+="string_0095";
-	if($.im_a_poet) insult+="string_0096";
-	n("string_0097");
+	if($.hippies) insult+="jack_1_dialog_param_0000";
+	if($.im_a_poet) insult+="jack_1_dialog_param_0001";
+	n("jack_1_dialog_0095");
 	if(insult!=""){
-		n("string_0098", tr('jack_1', insult));
+		n("jack_1_dialog_0096", insult);
 	}else{
-		n("string_0099");
+		n("jack_1_dialog_0097");
 	}
 
 	Jack_1_End();

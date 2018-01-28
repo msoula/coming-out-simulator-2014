@@ -10,7 +10,7 @@ var dialogueDOMOffset = 20;
 var choicesDOM = document.getElementById("choices");
 var backgroundDOM = document.getElementById("background");
 
-subscribe("say", function(character, message, ...params){
+subscribe("say", function(character, message){
 
 	// Add dialogue bubble
 	var dom = document.createElement("div");
@@ -18,7 +18,7 @@ subscribe("say", function(character, message, ...params){
 	dom.style.color = character.color || "#000";
 	dom.style.background = character.background || "#FFF";
 	dom.style.borderLeftColor = dom.style.borderRightColor = character.background || "#FFF";
-	dom.innerHTML = tr(character.area, message).format(...params);
+	dom.innerHTML = message;
 	dialogueDOM.appendChild(dom);
 
 	// Play sounds
@@ -48,7 +48,7 @@ subscribe("choose", function(choices){
 
 		var label = labels[i];
 		var button = document.createElement("div");
-		button.innerHTML = tr("choices", label);
+		button.innerHTML = tr(label);
 		button.onclick = (function(callback,message){
 			return function(){
 				choicesDOM.innerHTML = "";

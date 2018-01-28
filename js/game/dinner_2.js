@@ -5,51 +5,48 @@
 
 function Start_Dinner_2(){
 
-    m("dinner_2");
-    n("dinner_2");
-
-	m("string_0003");
+	m("dinner_2_dialog_0000");
 	Show("mom","mom_sit");
 
 	switch($.waiting_action){
 		case "eat":
-			m("string_0004");
-			n("string_0005");
+			m("dinner_2_dialog_0001");
+			n("dinner_2_dialog_0002");
 			break;
 		case "wait":
-			m("string_0006");
-			n("string_0007");
+			m("dinner_2_dialog_0003");
+			n("dinner_2_dialog_0004");
 			break;
 		case "play":
-			m("string_0008");
-			n("string_0009");
+			m("dinner_2_dialog_0005");
+			n("dinner_2_dialog_0006");
 			break;
 	}
 
-	m("string_0010");
+	m("dinner_2_dialog_0007");
 
 	Choose({
 		"dinner_2_choice_1_entry_0000": function(message){
 			n(message);
-			n("string_0011");
-			m("string_0012");
-			m("string_0013");
+			n("dinner_2_dialog_0008");
+			m("dinner_2_dialog_0009");
+			m("dinner_2_dialog_0010");
 			Start_Dinner_2_1();
 		},
 		"dinner_2_choice_1_entry_0001": function(message){
 			n(message);
-			m("string_0014");
-			n("string_0015");
-			m("string_0012");
-			n("string_0011");
-			m("string_0016");
+			m("dinner_2_dialog_0011");
+			n("dinner_2_dialog_0012");
+			m("dinner_2_dialog_0009");
+			n("dinner_2_dialog_0008");
+			m("dinner_2_dialog_0013");
 			Start_Dinner_2_1();
 		},
 		"dinner_2_choice_1_entry_0002": function(message){
 			n(message);
-			m("string_0017");
-			n("string_0018");
-			m("string_0019");
+			m("dinner_2_dialog_0014");
+			n("dinner_2_dialog_0015");
+			m("dinner_2_dialog_0016");
 			Start_Dinner_2_1();
 		}
 	});
@@ -58,22 +55,22 @@ function Start_Dinner_2(){
 
 function Start_Dinner_2_1(){
 
-	n("string_0020");
-	n("string_0021");
-	m("string_0022");
-	n("string_0023");
+	n("dinner_2_dialog_0017");
+	n("dinner_2_dialog_0018");
+	m("dinner_2_dialog_0019");
+	n("dinner_2_dialog_0020");
 
 	Choose({
 		"dinner_2_choice_2_entry_0000": function(message){
-			$.studying_subject = "string_0000";
+			$.studying_subject = "dinner_2_dialog_param_0000";
 			Start_Dinner_2_2(message);
 		},
 		"dinner_2_choice_2_entry_0001": function(message){
-			$.studying_subject = "string_0001";
+			$.studying_subject = "dinner_2_dialog_param_0001";
 			Start_Dinner_2_2(message);
 		},
 		"dinner_2_choice_2_entry_0002": function(message){
-			$.studying_subject = "string_0002";
+			$.studying_subject = "dinner_2_dialog_param_0002";
 			Start_Dinner_2_2(message);
 		}
 	});
@@ -83,14 +80,14 @@ function Start_Dinner_2_1(){
 function Start_Dinner_2_2(message){
 
 	n(message);
-	m("string_0024");
-	m("string_0025", tr('dinner_2', $.studying_subject));
-	n("string_0012");
-	m("string_0026");
-	m("string_0027");
-	n("string_0028");
-	m("string_0029");
-	m("string_0030");
+	m("dinner_2_dialog_0021");
+	m("dinner_2_dialog_0022", $.studying_subject);
+	n("dinner_2_dialog_0009");
+	m("dinner_2_dialog_0023");
+	m("dinner_2_dialog_0024");
+	n("dinner_2_dialog_0025");
+	m("dinner_2_dialog_0026");
+	m("dinner_2_dialog_0027");
 
 	Choose({
 		"dinner_2_choice_3_entry_0000": function(message){
@@ -103,13 +100,13 @@ function Start_Dinner_2_2(message){
 			n(message);
 
 			$.lying_about_hanging_out = true;
-			m("string_0031");
-			n("string_0032");
-			m("string_0033");
-			n("string_0034");
-			m("string_0012");
-			m("string_0035");
-			n("string_0036");
+			m("dinner_2_dialog_0028");
+			n("dinner_2_dialog_0029");
+			m("dinner_2_dialog_0030");
+			n("dinner_2_dialog_0031");
+			m("dinner_2_dialog_0009");
+			m("dinner_2_dialog_0032");
+			n("dinner_2_dialog_0033");
 			Buddy_1_point_5();
 		},
 		"dinner_2_choice_3_entry_0002": function(message){
@@ -131,14 +128,14 @@ function Buddy_1(message){
 
 	if($.relationship!="study"){
 		$.lying_about_hanging_out = true;
-		m("string_0037");
-		n("string_0034");
-		m("string_0012");
-		m("string_0035");
-		n("string_0036");
+		m("dinner_2_dialog_0034");
+		n("dinner_2_dialog_0031");
+		m("dinner_2_dialog_0009");
+		m("dinner_2_dialog_0032");
+		n("dinner_2_dialog_0033");
 	}else{
-		m("string_0038");
-		n("string_0039");
+		m("dinner_2_dialog_0035");
+		n("dinner_2_dialog_0036");
 	}
 
 	Buddy_1_point_5();
@@ -146,9 +143,9 @@ function Buddy_1(message){
 
 function Buddy_Caught_Lying_1(message,callback){
 	n(message);
-	m("string_0040");
-	m("string_0041");
-	m("string_0042");
+	m("dinner_2_dialog_0037");
+	m("dinner_2_dialog_0038");
+	m("dinner_2_dialog_0039");
 	$.lying_about_relationship = true;
 	Choose({
 		"dinner_2_choice_4_entry_0000": callback,
@@ -159,8 +156,8 @@ function Buddy_Caught_Lying_1(message,callback){
 
 function Buddy_1_point_5(){
 
-	m("string_0043");
-	m("string_0044");
+	m("dinner_2_dialog_0040");
+	m("dinner_2_dialog_0041");
 
 	Choose({
 		"dinner_2_choice_5_entry_0000": function(message){
@@ -178,39 +175,39 @@ function Buddy_1_point_5(){
 
 function Buddy_2(message){
 	n(message);
-	m("string_0045");
+	m("dinner_2_dialog_0042");
 	if($.lying_about_relationship){
-		m("string_0046");
-		n("string_0047");
-		m("string_0012");
-		m("string_0048");
+		m("dinner_2_dialog_0043");
+		n("dinner_2_dialog_0044");
+		m("dinner_2_dialog_0009");
+		m("dinner_2_dialog_0045");
 	}
-	m("string_0049");
-	m("string_0050");
-	m("string_0051");
+	m("dinner_2_dialog_0046");
+	m("dinner_2_dialog_0047");
+	m("dinner_2_dialog_0048");
 	Buddy_Choice();
 }
 
 function Buddy_3(message){
 	n(message);
-	m("string_0052");
-	n("string_0053");
-	m("string_0054");
-	m("string_0055");
+	m("dinner_2_dialog_0049");
+	n("dinner_2_dialog_0050");
+	m("dinner_2_dialog_0051");
+	m("dinner_2_dialog_0052");
 	Buddy_Choice();
 }
 
 function Buddy_4(message){
 	n(message);
-	m("string_0056");
-	n("string_0057");
-	m("string_0058");
-	m("string_0059");
+	m("dinner_2_dialog_0053");
+	n("dinner_2_dialog_0054");
+	m("dinner_2_dialog_0055");
+	m("dinner_2_dialog_0056");
 	Choose({
 		"dinner_2_choice_6_entry_0000": function(message){
 			n(message);
-			m("string_0060");
-			m("string_0061");
+			m("dinner_2_dialog_0057");
+			m("dinner_2_dialog_0058");
 			Buddy_Choice();
 		},
 		"dinner_2_choice_6_entry_0001": function(message){
@@ -219,26 +216,26 @@ function Buddy_4(message){
 				Buddy_Caught_Lying_1(message,function(message){
 
 					n(message);
-					m("string_0045");
-					m("string_0046");
-					n("string_0047");
-					m("string_0012");
+					m("dinner_2_dialog_0042");
+					m("dinner_2_dialog_0043");
+					n("dinner_2_dialog_0044");
+					m("dinner_2_dialog_0009");
 
-					m("string_0062");
-					n("string_0063");
-					m("string_0064");
-					m("string_0054");
+					m("dinner_2_dialog_0059");
+					n("dinner_2_dialog_0060");
+					m("dinner_2_dialog_0061");
+					m("dinner_2_dialog_0051");
 					Buddy_Choice();
 
 				});
 			}else{
 
 				n(message);
-				m("string_0065");
-				m("string_0062");
-				n("string_0063");
-				m("string_0064");
-				m("string_0054");
+				m("dinner_2_dialog_0062");
+				m("dinner_2_dialog_0059");
+				n("dinner_2_dialog_0060");
+				m("dinner_2_dialog_0061");
+				m("dinner_2_dialog_0051");
 				Buddy_Choice();
 
 			}
@@ -250,23 +247,23 @@ function Buddy_4(message){
 
 function Buddy_Choice(){
 	if($.relationship=="friend"){
-		m("string_0066");
-		m("string_0067");
+		m("dinner_2_dialog_0063");
+		m("dinner_2_dialog_0064");
 	}
 	if($.relationship=="best friend"){
-		m("string_0068");
-		m("string_0067");
+		m("dinner_2_dialog_0065");
+		m("dinner_2_dialog_0064");
 	}
 	Choose({
 		"dinner_2_choice_7_entry_0000": function(message){
 			n(message);
-			m("string_0069");
-			n("string_0007");
+			m("dinner_2_dialog_0066");
+			n("dinner_2_dialog_0004");
 			Buddy_Aftermath();
 		},
 		"dinner_2_choice_7_entry_0001": function(message){
 			n(message);
-			m("string_0070");
+			m("dinner_2_dialog_0067");
 			Buddy_Aftermath();
 		},
 		"dinner_2_choice_7_entry_0002": function(message){
@@ -274,10 +271,10 @@ function Buddy_Choice(){
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,function(message){
 					n(message);
-					m("string_0045");
-					m("string_0046");
-					n("string_0047");
-					m("string_0012");
+					m("dinner_2_dialog_0042");
+					m("dinner_2_dialog_0043");
+					n("dinner_2_dialog_0044");
+					m("dinner_2_dialog_0009");
 					Buddy_Aftermath();
 				});
 			}else{
@@ -292,10 +289,10 @@ function Buddy_Choice(){
 
 function Buddy_Aftermath(){
 
-	m("string_0071");
-	m("string_0072");
-	m("string_0073");
-	m("string_0074");
+	m("dinner_2_dialog_0068");
+	m("dinner_2_dialog_0069");
+	m("dinner_2_dialog_0070");
+	m("dinner_2_dialog_0071");
 
 	Show("clock_time","clock_1910");
 	Show("nicky","dinner_nicky_defiant");
@@ -311,28 +308,28 @@ function Buddy_Aftermath_2(message){
 
 	n(message);
 
-	n("string_0075");
-	n("string_0076");
-	m("string_0077");
-	n("string_0078");
-	m("string_0079");
-	m("string_0080");
+	n("dinner_2_dialog_0072");
+	n("dinner_2_dialog_0073");
+	m("dinner_2_dialog_0074");
+	n("dinner_2_dialog_0075");
+	m("dinner_2_dialog_0076");
+	m("dinner_2_dialog_0077");
 
 	Show("nicky","dinner_nicky_sit");
-	n("string_0012");
-	n("string_0081");
+	n("dinner_2_dialog_0009");
+	n("dinner_2_dialog_0078");
 
 	Choose({
 		"dinner_2_choice_9_entry_0000": function(message){
-			$.studying_subject_2 = "string_0002";
+			$.studying_subject_2 = "dinner_2_dialog_param_0002";
 			Grades_Start(message);
 		},
 		"dinner_2_choice_9_entry_0001": function(message){
-			$.studying_subject_2 = "string_0000";
+			$.studying_subject_2 = "dinner_2_dialog_param_0000";
 			Grades_Start(message);
 		},
 		"dinner_2_choice_9_entry_0002": function(message){
-			$.studying_subject_2 = "string_0001";
+			$.studying_subject_2 = "dinner_2_dialog_param_0001";
 			Grades_Start(message);
 		}
 	});
@@ -346,7 +343,7 @@ function Buddy_Aftermath_2(message){
 
 function Grades_Start(message){
 	n(message);
-	m("string_0012");
+	m("dinner_2_dialog_0009");
 	if($.studying_subject!=$.studying_subject_2){
 		Grades_Start_1();
 	}else{
@@ -355,30 +352,30 @@ function Grades_Start(message){
 }
 
 function Grades_Start_1(){
-	m("string_0082", tr('dinner_2', $.studying_subject));
-	m("string_0083", tr('dinner_2', $.studying_subject_2));
+	m("dinner_2_dialog_0079", $.studying_subject);
+	m("dinner_2_dialog_0080", $.studying_subject_2);
 	$.lying_about_studying = true;
-	n("string_0084");
+	n("dinner_2_dialog_0081");
 	if($.lying_about_hanging_out || $.lying_about_relationship){
-		m("string_0085");
-		n("string_0086");
+		m("dinner_2_dialog_0082");
+		n("dinner_2_dialog_0083");
 	}
-	m("string_0087");
-	n("string_0012");
+	m("dinner_2_dialog_0084");
+	n("dinner_2_dialog_0009");
 	Grades_Explaining();
 }
 
 function Grades_Start_2(){
-	m("string_0088");
-	n("string_0089");
-	m("string_0045");
+	m("dinner_2_dialog_0085");
+	n("dinner_2_dialog_0086");
+	m("dinner_2_dialog_0042");
 	if($.lying_about_hanging_out){
-		m("string_0090");
-		n("string_0091");
+		m("dinner_2_dialog_0087");
+		n("dinner_2_dialog_0088");
 	}
-	m("string_0012");
-	m("string_0092", tr('dinner_2', $.studying_subject_2));
-	n("string_0012");
+	m("dinner_2_dialog_0009");
+	m("dinner_2_dialog_0089", $.studying_subject_2);
+	n("dinner_2_dialog_0009");
 	Grades_Explaining();
 }
 

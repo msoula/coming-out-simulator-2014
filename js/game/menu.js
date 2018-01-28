@@ -4,9 +4,6 @@ function Start(){
 
 	/////// SET UP SCENE ////////
 
-    N("menu");
-    p("menu");
-
 	Show("background","coffeehouse");
 	Show("cup","cup_steam",{x:44,y:359});
 	Show("nicky","coffee_nicky_still");
@@ -15,18 +12,18 @@ function Start(){
 
 	//////////////////////////////
 
-	N("string_0000");
-	N("string_0001");
-	N("string_0002");
-	N("string_0003");
+	N("menu_dialog_0000");
+	N("menu_dialog_0001");
+	N("menu_dialog_0002");
+	N("menu_dialog_0003");
 
 	Choose({
 		"menu_choice_1_entry_0000": Play,
 		"menu_choice_1_entry_0001": function(){
-			Credits("string_0004");
+			Credits("menu_dialog_0004");
 		},
 		"menu_choice_1_entry_0002": function(){
-			About("string_0005");
+			About("menu_dialog_0005");
 		}
 	});
 
@@ -47,56 +44,56 @@ function Play(message){
 
 	// Asked neither
 	if(!$.asked_about && !$.asked_credits){
-		N("string_0006");
-		N("string_0007");
-		p("string_0008");
-		N("string_0009");
+		N("menu_dialog_0006");
+		N("menu_dialog_0007");
+		p("menu_dialog_0008");
+		N("menu_dialog_0009");
 	}
 	// Asked both
 	if($.asked_about && $.asked_credits){
-		p("string_0010");
-		p("string_0011");
-		N("string_0012");
+		p("menu_dialog_0010");
+		p("menu_dialog_0011");
+		N("menu_dialog_0012");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
-		N("string_0013");
+		N("menu_dialog_0013");
 	}
 
-	N("string_0014");
-	p("string_0015");
-	N("string_0016");
+	N("menu_dialog_0014");
+	p("menu_dialog_0015");
+	N("menu_dialog_0016");
 
-	N("string_0017");
+	N("menu_dialog_0017");
 
 	Choose({
 		"menu_choice_2_entry_0000": function(message){
 			$.main_menu_convo_1 = 1;
 
 			p(message);
-			N("string_0018");
-			p("string_0019");
-			N("string_0020");
+			N("menu_dialog_0018");
+			p("menu_dialog_0019");
+			N("menu_dialog_0020");
 			Play_2();
 		},
 		"menu_choice_2_entry_0001": function(message){
 			$.main_menu_convo_1 = 2;
 
 			p(message);
-			N("string_0021");
-			p("string_0022");
-			N("string_0023");
-			p("string_0024");
-			N("string_0025");
+			N("menu_dialog_0021");
+			p("menu_dialog_0022");
+			N("menu_dialog_0023");
+			p("menu_dialog_0024");
+			N("menu_dialog_0025");
 			Play_2();
 		},
 		"menu_choice_2_entry_0002": function(message){
 			$.main_menu_convo_1 = 3;
 
 			p(message);
-			N("string_0026");
-			N("string_0027");
-			p("string_0028");
-			N("string_0025");
+			N("menu_dialog_0026");
+			N("menu_dialog_0027");
+			p("menu_dialog_0028");
+			N("menu_dialog_0025");
 			Play_2();
 		}
 	});
@@ -106,38 +103,38 @@ function Play(message){
 function Play_2(){
 
 	if(!$.asked_about){
-		N("string_0029");
-		p("string_0008");
+		N("menu_dialog_0029");
+		p("menu_dialog_0008");
 	}
 
-	N("string_0030");
-	N("string_0031");
-	N("string_0032");
-	N("string_0033");
+	N("menu_dialog_0030");
+	N("menu_dialog_0031");
+	N("menu_dialog_0032");
+	N("menu_dialog_0033");
 
 	Choose({
 		"menu_choice_3_entry_0000": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
-			N("string_0034");
-			p("string_0010");
+			N("menu_dialog_0034");
+			p("menu_dialog_0010");
 			Play_3();
 		},
 		"menu_choice_3_entry_0001": function(message){
 			$.main_menu_convo_2 = 1;
 
 			p(message);
-			N("string_0035");
-			p("string_0036");
+			N("menu_dialog_0035");
+			p("menu_dialog_0036");
 			Play_3();
 		},
 		"menu_choice_3_entry_0002": function(message){
 			$.main_menu_convo_2 = 3;
 
 			p(message);
-			N("string_0037");
-			p("string_0010");
+			N("menu_dialog_0037");
+			p("menu_dialog_0010");
 			Play_3();
 		}
 	});
@@ -146,22 +143,22 @@ function Play_2(){
 
 function Play_3(){
 
-	N("string_0038");
+	N("menu_dialog_0038");
 	if(!$.asked_credits){
-		N("string_0039");
-		p("string_0008");
+		N("menu_dialog_0039");
+		p("menu_dialog_0008");
 	}
 
-	var whatISay;
+	var whatISay = [];
 	switch($.main_menu_convo_1){
-		case 1: whatISay = "string_0040"; break;
-		case 2: whatISay = "string_0041"; break;
-		case 3: whatISay = "string_0042"; break;
+		case 1: whatISay.push("menu_dialog_0040"); break;
+		case 2: whatISay.push("menu_dialog_0041"); break;
+		case 3: whatISay.push("menu_dialog_0042"); break;
 	}
 	switch($.main_menu_convo_2){
-		case 1: whatISay += "string_0043"; break;
-		case 2: whatISay += "string_0044"; break;
-		case 3: whatISay += "string_0045"; break;
+		case 1: whatISay.push("menu_dialog_0043"); break;
+		case 2: whatISay.push("menu_dialog_0044"); break;
+		case 3: whatISay.push("menu_dialog_0045"); break;
 	}
 	N(whatISay);
 
@@ -169,7 +166,7 @@ function Play_3(){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
-	p("string_0046");
+	p("menu_dialog_0046");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -183,14 +180,14 @@ function Play_3(){
 	Show("nicky","coffee_nicky_still_2");
 	Wait(500);
 
-	N("string_0047");
-	N("string_0048");
-	N("string_0049");
-	p("string_0050");
-	N("string_0034");
+	N("menu_dialog_0047");
+	N("menu_dialog_0048");
+	N("menu_dialog_0049");
+	p("menu_dialog_0050");
+	N("menu_dialog_0034");
 
-	N("string_0010");
-	N("string_0051");
+	N("menu_dialog_0010");
+	N("menu_dialog_0051");
 
 	Clear();
 	Start_Jack_1();
@@ -204,34 +201,34 @@ function Credits(message){
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
-		SipCoffee("string_0004");
+		SipCoffee("menu_dialog_0004");
 	}
 
-	N("string_0052");
-	N("string_0053");
-	N("string_0054");
+	N("menu_dialog_0052");
+	N("menu_dialog_0053");
+	N("menu_dialog_0054");
 
-	p("string_0055");
+	p("menu_dialog_0055");
 	if($.asked_about){
-		p("string_0056");
+		p("menu_dialog_0056");
 	}else{
-		p("string_0057");
+		p("menu_dialog_0057");
 	}
 
-	N("string_0058");
+	N("menu_dialog_0058");
 
 	if($.asked_about){
-		p("string_0059");
-		p("string_0060");
-		p("string_0061");
-		N("string_0062");
-		N("string_0063");
+		p("menu_dialog_0059");
+		p("menu_dialog_0060");
+		p("menu_dialog_0061");
+		N("menu_dialog_0062");
+		N("menu_dialog_0063");
 	}else{
-		N("string_0064");
+		N("menu_dialog_0064");
 	}
 
-	N("string_0065");
-	N("string_0066");
+	N("menu_dialog_0065");
+	N("menu_dialog_0066");
 
 	if($.asked_about){
 		Choose({
@@ -241,7 +238,7 @@ function Credits(message){
 		Choose({
 			"menu_choice_5_entry_0000": Play,
 			"menu_choice_5_entry_0001": function(){
-				About("string_0067");
+				About("menu_dialog_0067");
 			}
 		});
 	}
@@ -255,31 +252,31 @@ function About(message){
 	SipCoffee(message);
 
 	if($.asked_credits){
-		N("string_0068");
+		N("menu_dialog_0068");
 	}else{
-		N("string_0069");
-		N("string_0070");
-		N("string_0071");
+		N("menu_dialog_0069");
+		N("menu_dialog_0070");
+		N("menu_dialog_0071");
 	}
 
-	p("string_0061");
-	N("string_0072");
+	p("menu_dialog_0061");
+	N("menu_dialog_0072");
 
 	if($.asked_credits){
-		p("string_0073");
-		N("string_0074");
-		p("string_0075");
+		p("menu_dialog_0073");
+		N("menu_dialog_0074");
+		p("menu_dialog_0075");
 	}
 
-	N("string_0076");
-	p("string_0077");
-	N("string_0078");
-	N("string_0079");
-	N("string_0080");
+	N("menu_dialog_0076");
+	p("menu_dialog_0077");
+	N("menu_dialog_0078");
+	N("menu_dialog_0079");
+	N("menu_dialog_0080");
 
-	p("string_0081");
-	N("string_0082");
-	p("string_0083");
+	p("menu_dialog_0081");
+	N("menu_dialog_0082");
+	p("menu_dialog_0083");
 
 	if($.asked_credits){
 		Choose({
@@ -289,7 +286,7 @@ function About(message){
 		Choose({
 			"menu_choice_7_entry_0000": Play,
 			"menu_choice_7_entry_0001": function(){
-				Credits("string_0084");
+				Credits("menu_dialog_0084");
 			}
 		});
 	}

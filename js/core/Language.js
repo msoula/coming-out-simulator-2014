@@ -7,9 +7,8 @@ function load(lang, callback) {
     });
 }
 
-function tr(part, key) {
-    if (!translations[part]) return key;
-    return translations[part][key] || key;
+function tr(key) {
+    return translations[key] || key;
 }
 
 Choose({
@@ -20,7 +19,7 @@ Choose({
     },
     "Français": function(message){
         load('fr', function() {
-            Start();
+            Start_Dinner_1();
         });
     }
 });
