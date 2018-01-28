@@ -1,5 +1,5 @@
 // Denounement
-// j("That mode of communication?"); j("It's imprecise, impersonal, impossible to truly connect.");
+// j("string_0047"); j("string_0048");
 
 // Recap what happened.
 // Who's to blame.
@@ -27,33 +27,33 @@ function Start_Jack_2(){
 
 	/////////////////////////////
 
-	n("Hey Jack.");
+	n("string_0000");
 	if($.sadsack){
-		j("Hello, Nicky darling. Still a sad sack of sadness?");
+		j("string_0001");
 	}else{
-		j("Hello, Nicky darling.");
+		j("string_0002");
 	}
-	j("How was coming out to your parents? Did I tell you so, or did I tell you so?");
+	j("string_0003");
 
 	Choose({
-		"Jack... we messed up big time, Jack.": function(message){
+		"jack_2_choice_1_entry_0000": function(message){
 			n(message);
-			j("No... no, no.");
-			j("You're kidding me, right? What happened?");
+			j("string_0004");
+			j("string_0005");
 			What_Happened();
 		},
-		"Things could have been worse.": function(message){
+		"jack_2_choice_1_entry_0001": function(message){
 			n(message);
-			j("Oh. Oh no.");
-			j("I didn't expect that they'd... what... what happened?");
+			j("string_0006");
+			j("string_0007");
 			What_Happened();
 		},
-		"Shut up, Jack.": function(message){
+		"jack_2_choice_1_entry_0002": function(message){
 			n(message);
-			j("Ha, yes, I knew I was right!");
-			n("No. Jack, we can't see each other ever again.");
-			j("Wait.");
-			j("No, no, no. You're kidding me, right? What happened?");
+			j("string_0008");
+			n("string_0009");
+			j("string_0010");
+			j("string_0011");
 			What_Happened();
 		}
 	});
@@ -64,29 +64,29 @@ function What_Happened(){
 
 	if($.punched){
 		Choose({
-			"My dad punched me in the face.": What_Happened_Abuse,
-			"They're making me change schools.": What_Happened_School,
-			"They read all our texts.": What_Happened_Texts
+			"jack_2_choice_2_entry_0000": What_Happened_Abuse,
+			"jack_2_choice_2_entry_0001": What_Happened_School,
+			"jack_2_choice_2_entry_0002": What_Happened_Texts
 		});
 	}else if($.father_oblivious==false){
 		Choose({
-			"My parents got verbally violent with each other.": What_Happened_Abuse,
-			"They're making me change schools.": What_Happened_School,
-			"They read all our texts.": What_Happened_Texts
+			"jack_2_choice_3_entry_0000": What_Happened_Abuse,
+			"jack_2_choice_2_entry_0001": What_Happened_School,
+			"jack_2_choice_2_entry_0002": What_Happened_Texts
 		});
 	}else{
-		n("Well, my dad's oblivious. For now. But my mom...");
+		n("string_0012");
 		if($.changing_schools){
 			Choose({
-				"She's making me change schools.": What_Happened_School,
-				"She's setting me up with a girl I've never met.": What_Happened_Girl,
-				"She read all our texts.": What_Happened_Texts,
+				"jack_2_choice_4_entry_0000": What_Happened_School,
+				"jack_2_choice_4_entry_0001": What_Happened_Girl,
+				"jack_2_choice_4_entry_0002": What_Happened_Texts,
 			});
 		}else{
 			Choose({
-				"She got a tutor to kill all my after-school hours.": What_Happened_School,
-				"She's setting me up with a girl I've never met.": What_Happened_Girl,
-				"She read all our texts.": What_Happened_Texts,
+				"jack_2_choice_5_entry_0000": What_Happened_School,
+				"jack_2_choice_4_entry_0001": What_Happened_Girl,
+				"jack_2_choice_4_entry_0002": What_Happened_Texts,
 			});
 		}
 	}
@@ -97,86 +97,86 @@ function What_Happened_Abuse(message){
 	$.told_jack = "abuse";
 
 	n(message);
-	j("Oh my god!");
-	j("Nicky, you need to call Child Protective Services.");
-	n("What?! No. That's way too much.");
-	j("Just... okay, but at least promise me you'll visit the school counselor tomorrow?");
-	n("Fine.");
-	j(". . .");
+	j("string_0013");
+	j("string_0014");
+	n("string_0015");
+	j("string_0016");
+	n("string_0017");
+	j("string_0018");
 	What_Happened_2();
 }
 function What_Happened_School(message){
 	$.told_jack = "school";
 
 	n(message);
-	j("No!");
-	j("Why?! Why are they doing that?");
-	n("Because 'Jack and the school is a bad influence on me', or something. They just want to break us up.");
-	j("That's horrible...");
+	j("string_0019");
+	j("string_0020");
+	n("string_0021");
+	j("string_0022");
 	What_Happened_2();
 }
 function What_Happened_Girl(message){
 	$.told_jack = "girl";
 
 	n(message);
-	j("Ew, seriously?");
-	n("Her name's Claire Something. She'll also be tutoring me.");
-	j("Ew squared, they're also hooking you up with your own tutor?");
-	n("Yup.");
+	j("string_0023");
+	n("string_0024");
+	j("string_0025");
+	n("string_0026");
 	What_Happened_2();
 }
 function What_Happened_Texts(message){
 	$.told_jack = "texts";
 
 	n(message);
-	j("That is just plain rude!");
-	j("Wait, what will you do with these texts right now, then?");
-	n("I can hide them better. My parents aren't exactly a tech-savvy bunch.");
-	j("...just plain rude.");
+	j("string_0027");
+	j("string_0028");
+	n("string_0029");
+	j("string_0030");
 	What_Happened_2();
 }
 
 function What_Happened_2(){
 
-	n("And that's just one out of three crappy things that happened.");
-	j("Nicky...");
-	j("I am truly, truly apologetic.");
-	j("This is my fault. I urged you to come out to your parents. Stupid me.");
+	n("string_0031");
+	j("string_0032");
+	j("string_0033");
+	j("string_0034");
 
 	Choose({
-		"Yeah, stupid you.": function(message){
+		"jack_2_choice_6_entry_0000": function(message){
 			$.blame = "jack";
 
 			n(message);
-			n("If you hadn't been all so 'ohhhh Nicky coming out is good for the soul' and shit, this never would have...");
-			j(". . .");
-			n("I'm sorry. You're the only person I can lash out on.");
-			n("Isn't that just fucked up?");
+			n("string_0035");
+			j("string_0018");
+			n("string_0036");
+			n("string_0037");
 			What_Now();
 		},
-		"No, it's THEIR fault.": function(message){
+		"jack_2_choice_6_entry_0001": function(message){
 			$.blame = "parents";
 
 			n(message);
-			n("They already read our texts. Anything I would have said after that couldn't change what happened.");
+			n("string_0038");
 			if($.told_jack!="texts"){
-				j("What! You didn't tell me they also read your texts!");
+				j("string_0039");
 			}else{
-				j("And they're stuck in their old-fashioned moralities, the poor things.");
-				n("I wouldn't go so far as to pity them.");
+				j("string_0040");
+				n("string_0041");
 			}
 			What_Now();
 		},
-		"No, this is all my fault.": function(message){
+		"jack_2_choice_6_entry_0002": function(message){
 			$.blame = "nicky";
 
 			n(message);
-			n("I should have passcode-locked my phone, or use encrypted text, or hid it better...");
+			n("string_0042");
 			if($.told_jack!="texts"){
-				j("They read your texts, too?...");
+				j("string_0043");
 			}
-			j("Nicky, you had every right to trust them, they're your parents. They abused that trust. It's not your fault.");
-			n("Yeah...");
+			j("string_0044");
+			n("string_0045");
 			What_Now();
 		}
 	});
@@ -185,49 +185,49 @@ function What_Happened_2(){
 
 function What_Now(){
 
-	j(". . .");
+	j("string_0018");
 
-	n("You know... talking with my parents, it's like...");
-	n("That mode of communication?");
-	n("It's imprecise, impersonal, impossible to truly connect.");
+	n("string_0046");
+	n("string_0047");
+	n("string_0048");
 
-	j(". . .");
-	j("What now?");
+	j("string_0018");
+	j("string_0049");
 
 	Choose({
-		"I'm going to sabotage my parents' plans.": function(message){
+		"jack_2_choice_7_entry_0000": function(message){
 			n(message);
 
 			if($.told_jack=="texts"){
-				n("I'll set up a new email and virtual phone number to talk with you.");
-				n("This way they can't spy on our communications anymore.");
+				n("string_0050");
+				n("string_0051");
 			}else if($.told_jack=="girl"){
-				n("I'll tell Claire everything. With any luck, she'll help me fight back.");
+				n("string_0052");
 			}else{
-				n("I'll figure out a way, somehow...");
+				n("string_0053");
 			}
 
 			What_Now_2();
 		},
-		"I'll visit the school counselor tomorrow.": function(message){
+		"jack_2_choice_7_entry_0001": function(message){
 			n(message);
 
 			if($.told_jack=="abuse"){
-				n("Like I promised. Like you made me promise.");
+				n("string_0054");
 			}else if($.told_jack=="school"){
-				n("My current school, that is. I don't know how soon they'll be transferring me.");
+				n("string_0055");
 			}else{
-				n("At least they'll be someone else I can lash out on.");
+				n("string_0056");
 			}
 
 			What_Now_2();
 		},
-		"I'm getting out of this house.": function(message){
+		"jack_2_choice_7_entry_0002": function(message){
 			n(message);
 
-			n("Not running away, I mean. Although if I did I could crash at your place.");
-			n("But anyway. I'm going to try to get an internship or scholarship in the US.");
-			n("And get far, far away from these people.");
+			n("string_0057");
+			n("string_0058");
+			n("string_0059");
 			What_Now_2();
 		}
 	});
@@ -236,40 +236,40 @@ function What_Now(){
 
 function What_Now_2(){
 
-	j("No, I mean... what now, between us?");
-	n("Jack...");
-	j("What do we do? What... What happens?");
-	n(". . .");
+	j("string_0060");
+	n("string_0061");
+	j("string_0062");
+	n("string_0018");
 
 	Choose({
-		"We have to break up.": function(message){
+		"jack_2_choice_8_entry_0000": function(message){
 			$.breaking_up_soon = true;
 
 			n(message);
 
-			j("No, no no...");
-			n("I can't do this to you, Jack. I can't pull you down with me.");
-			j("At least, don't type 'we can still be friends'.");
-			n("we can still be frie");
-			n(". . .");
-			j("Because, of course we're friends. Of course we are.");
-			n(". . .");
+			j("string_0063");
+			n("string_0064");
+			j("string_0065");
+			n("string_0066");
+			n("string_0018");
+			j("string_0067");
+			n("string_0018");
 			What_Now_3();
 		},
-		"We stick together as long as we can.": function(message){
+		"jack_2_choice_8_entry_0001": function(message){
 			n(message);
 
-			j(". . .");
-			j("As long as we can.");
-			n(". . .");
+			j("string_0018");
+			j("string_0068");
+			n("string_0018");
 			What_Now_3();
 		},
-		"I don't know.": function(message){
+		"jack_2_choice_8_entry_0002": function(message){
 			$.breaking_up_soon = true;
 
 			n(message);
 
-			j(". . .");
+			j("string_0018");
 			What_Now_3();
 		}
 	});
@@ -278,20 +278,20 @@ function What_Now_2(){
 
 function What_Now_3(){
 
-	n("It's late.");
-	n("There's a lot I need to sleep on, now.");
-	j("Okay.");
-	j(". . .");
-	j("I love you, Nicky.");
-	n("I love you too, Jack.");
+	n("string_0069");
+	n("string_0070");
+	j("string_0071");
+	j("string_0018");
+	j("string_0072");
+	n("string_0073");
 
 	var insult = "";
-	if($.hippies) insult+=" new-age hippie";
-	if($.im_a_poet) insult+=" amateur poet";
+	if($.hippies) insult+="string_0095";
+	if($.im_a_poet) insult+="string_0096";
 	if(insult!=""){
-		n("You{0}.", insult);
+		n("string_0076", tr('jack_2', insult));
 	}else{
-		n("You goof.");
+		n("string_0077");
 	}
 
 	The_Game_Ends();

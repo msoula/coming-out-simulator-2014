@@ -22,37 +22,37 @@ function Start_Outro(){
 	///////////////////////////////
 
 	if($.breaking_up_soon){
-		N("And then we broke up three days later.");
+		N("string_0000");
 	}else{
-		N("And then we broke up three weeks later.");
+		N("string_0001");
 	}
 
 	// Weave - intro
 	if($.main_menu_convo_1==1){
-		p(". . .");
-		N("Told you this didn't end in gay unicorns.");
+		p("string_0002");
+		N("string_0003");
 	}else if($.main_menu_convo_1==3){
-		p(". . .");
-		N("Told you. Not blood, but tears.");
+		p("string_0002");
+		N("string_0004");
 	}else if($.main_menu_convo_2==1){
-		p(". . .");
-		N("You were right. I'm a bit of a downer.");
+		p("string_0002");
+		N("string_0005");
 	}
 
 	Choose({
-		"MY FEELS.":function(message){
+		"outro_choice_1_entry_0000":function(message){
 			p(message);
-			N("Let the feels flow, my friend.");
+			N("string_0006");
 			Closure();
 		},
-		"Aw, come on, that's cold dude.":function(message){
+		"outro_choice_1_entry_0001":function(message){
 			p(message);
-			N("I don't deny that.");
+			N("string_0007");
 			Closure();
 		},
-		"Can't say I didn't see that coming...":function(message){
+		"outro_choice_1_entry_0002":function(message){
 			p(message);
-			N("Yeah... Jack and I saw it coming, too.");
+			N("string_0008");
 			Closure();
 		}
 	});
@@ -65,50 +65,50 @@ function Closure(){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
-	p("Ugh.");
-	p("I feel gross just using the same-coloured dialogue balloons as the Father character.");
+	p("string_0009");
+	p("string_0010");
 
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Which reminds me. Many of the characters have been swapped around.");
-	N("All names have been changed, except mine.");
-	N("I left my little brother out entirely, because he's innocent.");
-	N("And I put my Father back in, even though he'd left the family long before 2010.");
+	N("string_0011");
+	N("string_0012");
+	N("string_0013");
+	N("string_0014");
 
 	if($.main_menu_convo_2==3){
-		N("Like you said, this 'true' game is full of lies.");
+		N("string_0015");
 	}
 
-	p("You could have at least given me a different colour.");
-	N("It's been four years since that night...");
-	N("What do you think happened afterwards?");
+	p("string_0016");
+	N("string_0017");
+	N("string_0018");
 
 	if($.main_menu_convo_2==2){
-		N("Don't worry. Like we said in the Main Menu, there are no right answers.");
+		N("string_0019");
 	}
 
 	$.coming_out_stories_left = 3;
 	$.order_of_stories = [];
 
 	Choose({
-		"Dude, I dunno, just freaking tell me.": function(message){
+		"outro_choice_2_entry_0000": function(message){
 			p(message);
-			N("Alright, I will tell you what happened.");
-			N("...and what happened, and what happened.");
-			p("What.");
+			N("string_0020");
+			N("string_0021");
+			p("string_0022");
 			Closure_Story();
 		},
-		"Let me guess, It Gets Better&trade;?": function(message){
+		"outro_choice_2_entry_0001": function(message){
 			p(message);
-			N("Yes, actually! In all three versions of what happened.");
-			p("What.");
+			N("string_0023");
+			p("string_0022");
 			Closure_Story();
 		},
-		"Flowers and rainbows and gay unicorns?": function(message){
+		"outro_choice_2_entry_0002": function(message){
 			p(message);
-			N("Yes, actually! At least, in one of my three versions of what happened.");
-			p("Of course.");
+			N("string_0024");
+			p("string_0025");
 			Closure_Story();
 		}
 	});
@@ -118,12 +118,12 @@ function Closure(){
 function Closure_Story(){
 
 	if($.coming_out_stories_left==3){
-		N("Which post-coming-out story do you want to hear first?");
-		N("Don't worry, you'll get to hear all three of them.");
+		N("string_0026");
+		N("string_0027");
 	}else if($.coming_out_stories_left==2){
-		N("Now, which version do you want to hear next?");
+		N("string_0028");
 	}else if($.coming_out_stories_left==1){
-		N("Finally, let's hear the last story...");
+		N("string_0029");
 	}else{
 		Finale_1();
 		return;
@@ -132,9 +132,9 @@ function Closure_Story(){
 	$.coming_out_stories_left -= 1;
 
 	var options = [];
-	if(!$.told_story_lie) options["The Lie."]=Tell_Me_A_Lie;
-	if(!$.told_story_truth) options["The Truth."]=Tell_Me_A_Truth;
-	if(!$.told_story_half_truth) options["The Half-Truth."]=Tell_Me_A_Half_Truth;
+	if(!$.told_story_lie) options["outro_choice_3_entry_0000"]=Tell_Me_A_Lie;
+	if(!$.told_story_truth) options["outro_choice_3_entry_0001"]=Tell_Me_A_Truth;
+	if(!$.told_story_half_truth) options["outro_choice_3_entry_0002"]=Tell_Me_A_Half_Truth;
 	Choose(options);
 
 }
@@ -142,10 +142,10 @@ function Closure_Story(){
 function Is_Last_Story(){
 	if($.coming_out_stories_left==0){
 		if($.asked_about && $.asked_credits){
-			p("Again, with the making the only option a clickable option...");
+			p("string_0030");
 		}else{
-			p("Why did you make that a clickable option, when it was the only option left.");
-			N("No idea. Moving on.");
+			p("string_0031");
+			N("string_0032");
 		}
 	}
 }
@@ -164,69 +164,69 @@ function Tell_Me_A_Lie(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Very well.");
+	N("string_0033");
 	Is_Last_Story();
 
-	N("I ran away from home, with nothing more than a luggage bag full of edible underwear.");
+	N("string_0034");
 	if($.im_a_poet){
-		N("I roamed the Great White North. Supporting myself by writing amateur poetry for strangers.");
+		N("string_0035");
 	}else{
-		N("I roamed the Great White North. Supporting myself by making not-fun web games.");
+		N("string_0036");
 	}
-	N("I ate flowers. Followed the rainbows. And befriended a homosexual unicorn.");
-	p(". . .");
-	N("Eventually I made it to Alaska, where I met an adult bisexual couple named Bonnie & Clyde.");
-	N("Bonnie was a mid-30s cougar, and Clyde was an early-40s manther.");
+	N("string_0037");
+	p("string_0002");
+	N("string_0038");
+	N("string_0039");
 
 	// FAMILY WITH BENEFITS
 	// Weave in -- top or bottom
 
 	Choose({
-		"I guess edible undies are both food & clothing.": function(message){
+		"outro_choice_4_entry_0000": function(message){
 			$.outro_convo_lie = 1;
 			p(message);
-			N("And thanks to my flexibility, the luggage bag doubles as housing!");
+			N("string_0040");
 			Tell_Me_A_Lie_2();
 		},
-		"This story is a fractal of fracked up.": function(message){
+		"outro_choice_4_entry_0001": function(message){
 			$.outro_convo_lie = 2;
 			p(message);
-			N("MY STORY. MY RULES.");
+			N("string_0041");
 			Tell_Me_A_Lie_2();
 		},
-		"...\"manther\".": function(message){
+		"outro_choice_4_entry_0002": function(message){
 			$.outro_convo_lie = 3;
 			p(message);
-			N("Also known as a faguar.");
+			N("string_0042");
 			Tell_Me_A_Lie_2();
 		}
 	});
 }
 function Tell_Me_A_Lie_2(){
 
-	N("They took me in as their foster child, and I was their full-time boytoy.");
+	N("string_0043");
 
 	if($.outro_convo_lie==1){
-		p("...Thanks again to your, uh, flexibility.");
+		p("string_0044");
 	}
 
 	switch($.top_or_bottom){
-		case "top": N("As we know, I like having my partners be 'the woman' of a relationship."); break;
-		case "bottom": N("As we know, I'm usually 'the woman' of a relationship."); break;
-		case "versatile": N("As we know, I like taking turns at being 'the woman' of a relationship."); break;
+		case "top": N("string_0045"); break;
+		case "bottom": N("string_0046"); break;
+		case "versatile": N("string_0047"); break;
 	}
 
-	N("They raised me, showed me love, and I grew up to be a productive member of society.");
+	N("string_0048");
 
 	switch($.outro_convo_lie){
-		case 2: p("And when you zoom in on this fractal, there's MORE fracked-up-ness."); break;
-		case 3: p("...\"MANTHER\"."); break;
+		case 2: p("string_0049"); break;
+		case 3: p("string_0050"); break;
 	}
 
-	N("They were my new family.");
-	N("Family... with benefits.");
+	N("string_0051");
+	N("string_0052");
 
-	p(". . .");
+	p("string_0002");
 
 	Closure_Story();
 
@@ -248,43 +248,43 @@ function Tell_Me_A_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Here it goes.");
+	N("string_0053");
 	Is_Last_Story();
 
-	N("I took Jack's advice and parodied Inception in my 'odd web game', Reimagine :The Game:.");
+	N("string_0054");
 	switch($.inception_answer){
-		case "awake": N("Didn't say that Cobbs was awake in the ending, though."); break;
-		case "dream": N("Didn't say that the movie was all just a dream, though."); break;
-		case "neither": N("Still think it doesn't matter if Cobbs was still dreaming."); break;
+		case "awake": N("string_0055"); break;
+		case "dream": N("string_0056"); break;
+		case "neither": N("string_0057"); break;
 	}
-	N("Reimagine :The Game: got internet-famous-ish! A good portfolio piece.");
-	N("A few months later, I landed an internship at Electronic Arts in the Bay Area. Far away from my family in Canada.");
+	N("string_0058");
+	N("string_0059");
 
 	Choose({
-		"Eww, Electronic Arts...?": function(message){
+		"outro_choice_5_entry_0000": function(message){
 			$.outro_convo_truth = 3;
 			p(message);
 
-			N("Yeah, I know, I know.");
-			N("I'm now repenting for my sins by making artsy-fartsy indie games like this one.");
-			p("Repent harder, dammit.");
+			N("string_0060");
+			N("string_0061");
+			p("string_0062");
 			Tell_Me_A_Truth_2();
 		},
-		"And the Bay Area is very LGBT friendly.": function(message){
+		"outro_choice_5_entry_0001": function(message){
 			$.outro_convo_truth = 2;
 			p(message);
 
-			N("That's why they call it the Gay Area!");
-			p("Uh.. nobody calls it that.");
+			N("string_0063");
+			p("string_0064");
 			Tell_Me_A_Truth_2();
 		},
-		"Oh, I love EA! They make The Sims, right?": function(message){
+		"outro_choice_5_entry_0002": function(message){
 			$.outro_convo_truth = 1;
 			p(message);
 
-			N("Yup! I didn't work on those, though. Our team was making a web game version of--");
-			N("[LITERALLY CANNOT DISCLOSE]");
-			p("Oh.");
+			N("string_0065");
+			N("string_0066");
+			p("string_0067");
 			Tell_Me_A_Truth_2();
 		}
 	});
@@ -292,17 +292,17 @@ function Tell_Me_A_Truth(message){
 }
 function Tell_Me_A_Truth_2(){
 
-	N("After EA, I went on to go indie.");
-	N("But I stayed in touch with friends at EA, and stayed in the Bay Area.");
+	N("string_0068");
+	N("string_0069");
 
-	N("My technical skills grew.");
-	N("My social skills grew.");
-	N("And here... I'm finally starting to figure out my identity.");
+	N("string_0070");
+	N("string_0071");
+	N("string_0072");
 
 	switch($.outro_convo_truth){
-		case 1: p("Well, I'm looking forward to Literally Cannot Disclose: The Game."); break;
-		case 2: p("But seriously, no one calls it the Gay Area."); break;
-		case 3: p("But seriously, ew. Electronic Arts."); break;
+		case 1: p("string_0073"); break;
+		case 2: p("string_0074"); break;
+		case 3: p("string_0075"); break;
 	}
 
 	Closure_Story();
@@ -324,40 +324,40 @@ function Tell_Me_A_Half_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("As you wish.");
+	N("string_0076");
 	Is_Last_Story();
 
-	N("Claire, in an ironic twist of fate, was also bisexual.");
-	N("We told each other about it during a {0} study session.", $.studying_subject);
+	N("string_0077");
+	N("string_0078", tr('dinner_2', $.studying_subject));
 
-	p("What a twist!");
+	p("string_0079");
 
-	N("Claire was insecure about her sexual orientation, like me.");
-	N("We were both somewhat inexperienced. Claire's only been with women, and I've only been with Jack.");
+	N("string_0080");
+	N("string_0081");
 
 	// CLAIRE AND I HELPED EACH OTHER EXPLORE OURSELVES, LESS GUILT, MORE EXPERIENCE.
 	// Weave in -- studying what
 
 	Choose({
-		"A mirror version of you, but reversed...": function(message){
+		"outro_choice_6_entry_0000": function(message){
 			$.outro_convo_half_truth = 1;
 			p(message);
-			N("Well, uh, all mirror images are reversed.");
-			p("You know what I mean.");
-			N("But yeah, Claire and I shared our experiences with one another.");
+			N("string_0082");
+			p("string_0083");
+			N("string_0084");
 			Tell_Me_A_Half_Truth_2();
 		},
-		"So, you taught each other the other side?": function(message){
+		"outro_choice_6_entry_0001": function(message){
 			$.outro_convo_half_truth = 3;
 			p(message);
 			Tell_Me_A_Half_Truth_2();
 		},
-		"Did you end up having sexytimes together?": function(message){
+		"outro_choice_6_entry_0002": function(message){
 			$.outro_convo_half_truth = 2;
 			p(message);
-			N("No. She's like a sister to me. A sister I would not have sex with.");
-			p("You... did not need to clarify that.");
-			N("But yeah, Claire and I shared our experiences with one another.");
+			N("string_0085");
+			p("string_0086");
+			N("string_0084");
 			Tell_Me_A_Half_Truth_2();
 		}
 	});
@@ -365,23 +365,23 @@ function Tell_Me_A_Half_Truth(message){
 }
 function Tell_Me_A_Half_Truth_2(){
 
-	N("And exchanged tips!");
-	N("Like... do a 'come hither' motion with your fingers, or, rub the head against the roof of your mouth.");
-	p("T.M.I, dude...");
+	N("string_0087");
+	N("string_0088");
+	p("string_0089");
 
 	if($.changing_schools || !$.father_oblivious){
-		N("I did move to her school, in the end.");
+		N("string_0090");
 	}
 
-	N("We were best friends. We still are! We've now both moved to the US, far away from our hateful families.");
-	N("Together, we helped each other overcome our insecurities, and discover who we were...");
-	N("Proud bisexual sluts.");
+	N("string_0091");
+	N("string_0092");
+	N("string_0093");
 
-	p("What a touching story. I think.");
+	p("string_0094");
 
-	N("And of course, we wingman/wingwoman for each other.");
+	N("string_0095");
 
-	p(". . .");
+	p("string_0002");
 
 	Closure_Story();
 
@@ -393,7 +393,7 @@ function Tell_Me_A_Half_Truth_2(){
 
 function Finale_1(){
 
-	N("And that's the last of the post-coming-out stories!");
+	N("string_0096");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -408,36 +408,36 @@ function Finale_1(){
 
 	//////////////////////////
 
-	N("Dear player, I couldn't help but notice...");
+	N("string_0097");
 	if($.order_of_stories[0]=="truth"){
-		N("You went straight for the Truth first.");
+		N("string_0098");
 	}else if($.order_of_stories[2]=="truth"){
-		N("You saved the Truth for last.");
+		N("string_0099");
 	}else if($.order_of_stories[0]=="lie"){
-		N("You wanted to hear the Lie first.");
+		N("string_0100");
 	}else{
-		N("You saved the Lie for last.");
+		N("string_0101");
 	}
-	N("What does that say about you?...");
-	p(". . .");
+	N("string_0102");
+	p("string_0002");
 
-	p("You know... usually when a game gives you multiple endings, they don't do them ALL AT ONCE.");
-	N("Hah! You thought these were ENDINGS?");
+	p("string_0103");
+	N("string_0104");
 
 	Choose({
-		"Let me guess... This Is Just The Beginning?": function(message){
+		"outro_choice_7_entry_0000": function(message){
 			p(message);
-			N("This is just the begi-- oh. Okay, yeah.");
+			N("string_0105");
 			Finale_2();
 		},
-		"Well yeah. This game's over, right?": function(message){
+		"outro_choice_7_entry_0001": function(message){
 			p(message);
-			N("True... but the story, which is my story, my life, continues.");
+			N("string_0106");
 			Finale_2();
 		},
-		"oh god how long IS this damn game.": function(message){
+		"outro_choice_7_entry_0002": function(message){
 			p(message);
-			N("Don't worry. Your next choice is the very last one, I swear.");
+			N("string_0107");
 			Finale_2();
 		}
 	});
@@ -448,10 +448,10 @@ function Finale_2(){
 
 	Show("nicky","coffee_nicky_packup_1");
 
-	N(". . .");
-	N("You know, if I could go back and relive all my other possible choices...");
-	N("... which in a sense, I did, by writing this game...");
-	N("... I wouldn't change a thing.");
+	N("string_0002");
+	N("string_0108");
+	N("string_0109");
+	N("string_0110");
 
 	Show("nicky","coffee_nicky_packup_2");
 
@@ -459,19 +459,19 @@ function Finale_2(){
 	PlaySound("sfx","laptop_shut");
 	PlaySound("bg","bedroom_1",{loop:-1, volume:0.4});
 
-	p("? ? ?");
+	p("string_0111");
 
 	if($.punched){
-		N("My texts getting read. Being forced to change schools. Getting punched in the face.");
+		N("string_0112");
 	}else if($.father_oblivious==false){
-		N("My texts getting read. Being forced to change schools. All the verbal abuse.");
+		N("string_0113");
 	}else if($.changing_schools){
-		N("My texts getting read. Being forced to change schools. The attempted 'gay rehab' with Claire.");
+		N("string_0114");
 	}else{
-		N("My texts getting read. No more after-school hours to myself. The attempted 'gay rehab' with Claire.");
+		N("string_0115");
 	}
 
-	N("In a Stockholm Syndrome sort of sense... I'm grateful for it all.");
+	N("string_0116");
 
 	Choose({
 		"what.": Finale_3,
@@ -488,28 +488,28 @@ function Finale_3(message){
 	PlaySound("sfx","laptop_pack");
 	Show("nicky","coffee_nicky_packup_3");
 
-	N("Yes, really!");
-	N("I wouldn't have been so motivated to forge my own life... if my previous life wasn't total utter shit.");
+	N("string_0117");
+	N("string_0118");
 
 	PlaySound("sfx","laptop_pack_2");
 	Show("nicky","coffee_nicky_packup_4");
 
-	N("Later in 2010, Dan Savage launched the It Gets Better&trade; campaign.");
-	N("My three stories... Lie, Truth, Half-Truth... they're all at least true about one thing.");
-	N("It does get better.");
+	N("string_0119");
+	N("string_0120");
+	N("string_0121");
 
-	p(". . .");
+	p("string_0002");
 
-	N("And...");
-	N("At the end...");
-	N("Of this long, stupid, painful game...");
-	N("Where I played against people who should have been on my side...");
+	N("string_0122");
+	N("string_0123");
+	N("string_0124");
+	N("string_0125");
 
-	p(". . .");
+	p("string_0002");
 
-	N("I won.");
-	N(". . .");
-	N("I won.");
+	N("string_0126");
+	N("string_0002");
+	N("string_0126");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -540,14 +540,14 @@ function Finale_3(message){
 
 	PlaySound("sfx","step_2",{volume:0.25});
 	Choose({
-		"REPLAY?": Finale_4
+		"outro_choice_8_entry_0000": Finale_4
 	});
 
 }
 function Finale_4(message){
 
 	p(message);
-	N("Real life has no replays.");
+	N("string_0127");
 
 	Wait(800);
 	queue(function(){

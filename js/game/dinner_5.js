@@ -14,39 +14,39 @@ function Start_Dinner_5(){
 
 	PlaySound("sfx","dinner_door");
 
-	f("Hey Qiying! Hey Nick!");
-	f("I'm home!");
+	f("string_0000");
+	f("string_0001");
 
 	Show("dad","dad_serious");
 
-	m("Hi honey.");
-	n("Sup dad, how was your day?");
+	m("string_0002");
+	n("string_0003");
 
-	f("Stayed overtime. Hopefully the boss will notice it before my Performance Review.");
-	f("Really, though, I was just playing web games all day. Haha!");
-	n("Ha ha.");
+	f("string_0004");
+	f("string_0005");
+	n("string_0006");
 
-	f("Nick, why aren't <i>your</i> web games any fun?");
+	f("string_0007");
 
 	Choose({
-		"I thought my games were fun...": function(message){
+		"dinner_5_choice_1_entry_0000": function(message){
 			n(message);
-			f("Well then! You have a sick sense of fun, don't you. Haha!");
-			n(". . .");
+			f("string_0008");
+			n("string_0009");
 			Casual();
 		},
-		"Not all games have to be fun.": function(message){
+		"dinner_5_choice_1_entry_0001": function(message){
 			n(message);
-			f("Oh yes. You're right.");
-			f("BAD games aren't any fun. Haha!");
-			n(". . .");
+			f("string_0010");
+			f("string_0011");
+			n("string_0009");
 			Casual();
 		},
-		"ART!": function(message){
+		"dinner_5_choice_1_entry_0002": function(message){
 			n(message);
-			f("Pfft. What's the use of art?");
-			f("Next thing you know, you're going to be writing bad amateur poetry, or something.");
-			n(". . .");
+			f("string_0012");
+			f("string_0013");
+			n("string_0009");
 			Casual();
 		}
 	});
@@ -55,48 +55,48 @@ function Start_Dinner_5(){
 
 function Casual(){
 
-	f("Hey Qi, what's that sauce on your plate?");
-	f("Uh...");
+	f("string_0014");
+	f("string_0015");
 
 	Show("clock_time","clock_1950");
 
 	Choose({
-		"It's vomit.": function(message){
+		"dinner_5_choice_2_entry_0000": function(message){
 
 			n(message);
 
 			$.grounded = 2;
-			f("Nick! One week grounded!");
-			f("Don't insult your mother's cooking like that.");
-			f("Her food insults itself plenty enough. Haha!");
+			f("string_0016");
+			f("string_0017");
+			f("string_0018");
 
 			Casual_2();
 
 		},
-		"Don't eat it! It's, uh, really not good.": function(message){
+		"dinner_5_choice_2_entry_0001": function(message){
 
 			n(message);
 
 			$.grounded = 1;
-			f("Nick! One day grounded!");
-			f("Show some respect. Have more faith in your mother's cooking!");
-			f("Because the way she cooks, we could certainly use a miracle! Haha!");
+			f("string_0019");
+			f("string_0020");
+			f("string_0021");
 
 			Casual_2();
 
 		},
-		"Why don't you give it a try, dad?": function(message){
+		"dinner_5_choice_2_entry_0002": function(message){
 
 			n(message);
 
 			$.grounded = 0;
-			m("Nick...");
-			f("Don't mind if I do!");
-			f("[eats a spoonful]");
-			f(". . .");
-			n(". . .");
-			m(". . .");
-			f("Well, you've cooked up worse, hun. Haha!");
+			m("string_0022");
+			f("string_0023");
+			f("string_0024");
+			f("string_0009");
+			n("string_0009");
+			m("string_0009");
+			f("string_0025");
 
 			Casual_2();
 
@@ -107,26 +107,26 @@ function Casual(){
 
 function Casual_2(){
 
-	m("Dear...");
-	f("So, son! How's school?");
+	m("string_0026");
+	f("string_0027");
 
 	Choose({
-		"School's fine.": function(message){
+		"dinner_5_choice_3_entry_0000": function(message){
 
 			n(message);
 
-			f("Really, fine?");
+			f("string_0028");
 			if($.studying_subject!=$.studying_subject_2){
-				f("What about your poor grades in {0} and {1}?", $.studying_subject, $.studying_subject_2);
+				f("string_0029", tr('dinner_2', $.studying_subject), tr('dinner_2', $.studying_subject_2));
 			}else{
-				f("What about your poor grades in {0}?", $.studying_subject);
+				f("string_0030", tr('dinner_2', $.studying_subject));
 			}
 
-			m("Nick and I were just talking about that.");
+			m("string_0031");
 			Getting_A_Tutor();
 
 		},
-		"I'm studying at a friend's place tomorrow.": function(message){
+		"dinner_5_choice_3_entry_0001": function(message){
 			n(message);
 
 			$.tried_talking_about_it = true;
@@ -134,42 +134,42 @@ function Casual_2(){
 			if($.grounded>0){
 
 				if($.grounded==1){
-					f("Don't you remember? I just grounded you for tomorrow.");
+					f("string_0032");
 				}
 				if($.grounded==2){
-					f("Don't you remember? I just grounded you for a week.");
+					f("string_0033");
 				}
-				f("You must get your stupid from your mother's side. Haha!");
+				f("string_0034");
 
-				n("Um. I...");
+				n("string_0035");
 
 				$.grounded++;
 				if($.grounded==2){
-					f("I'm bumping it up. You're now grounded for a week.");
+					f("string_0036");
 				}
 				if($.grounded==3){
-					f("I'm bumping it up. You're now grounded for TWO weeks.");
+					f("string_0037");
 				}
 
 			}
 
-			m("Speaking of studying...");
+			m("string_0038");
 			Getting_A_Tutor();
 
 		},
-		"DAD I'M BISEXUAL AND BANGING JACK.": function(message){
+		"dinner_5_choice_3_entry_0002": function(message){
 			$.tried_talking_about_it = true;
 
 			Show("nicky","dinner_nicky_outrage");
-			n("DAD I'M BI--");
+			n("string_0039");
 			Show("nicky","dinner_nicky_sit");
 
-			m("BICYCLING to school every day starting next week.");
-			f("Oh good!");
-			f("You could certainly lose some weight, or else how will you get a girlfriend?");
-			f("You must get your chubbiness from your mother. Haha!");
-			n("Ha ha.");
-			m("Speaking of school...");
+			m("string_0040");
+			f("string_0041");
+			f("string_0042");
+			f("string_0043");
+			n("string_0006");
+			m("string_0044");
 			Getting_A_Tutor();
 		}
 
@@ -179,49 +179,49 @@ function Casual_2(){
 
 function Getting_A_Tutor(){
 
-	m("We were discussing probably getting a home tutor.");
-	f("Oh! Is this the Claire kid?");
+	m("string_0045");
+	f("string_0046");
 
 	// Oh dang!
 	Show("nicky","dinner_nicky_defiant");
 
 	switch($.promise_silence){
 		case "yes":
-			n("Mom, we both promised we wouldn't talk about this...");
+			n("string_0047");
 			if($.tried_talking_about_it){
-				m("You <i>just</i> tried talking about it.");
+				m("string_0048");
 			}
 			break;
 		case "no":
-			n("Mom, you said we wouldn't talk about this...");
-			m("You're the one who didn't promise not to talk!");
+			n("string_0049");
+			m("string_0050");
 			break;
 		case "tit for tat":
-			n("Mom, you said you wouldn't talk about this if I didn't...");
+			n("string_0051");
 			if($.tried_talking_about_it){
-				m("You <i>just</i> tried talking about it.");
+				m("string_0048");
 			}
 			break;
 	}
 
-	f("Talking about what?...");
-	f("I'm the head of this household. You two better not be hiding secrets from me.");
-	m("Oh... Nick just really, really likes Claire.");
+	f("string_0052");
+	f("string_0053");
+	m("string_0054");
 
 	Choose({
-		"What?! No I don't!": function(message){
+		"dinner_5_choice_4_entry_0000": function(message){
 			n(message);
-			f("Don't be so shy about it.");
+			f("string_0055");
 			Getting_A_Tutor_2();
 		},
-		"Fine. You got me. I have a crush on Claire.": function(message){
+		"dinner_5_choice_4_entry_0001": function(message){
 			n(message);
 			Getting_A_Tutor_2();
 		},
-		"I have a boyfriend.": function(message){
+		"dinner_5_choice_4_entry_0002": function(message){
 			n(message);
-			f("Yes son! You're going to be a boyfriend!");
-			n("<i>Have</i>. I <i>have</i> a--");
+			f("string_0056");
+			n("string_0057");
 			Getting_A_Tutor_2();
 		}
 	});
@@ -230,44 +230,44 @@ function Getting_A_Tutor(){
 
 function Getting_A_Tutor_2(){
 
-	f("You're becoming a man, son!");
-	f("If I were your age, I ditch your mother and chase Claire, too! Haha!");
+	f("string_0058");
+	f("string_0059");
 
-	n("That's totes weird, dude.");
-	f("Talking back? Careful, I'll box your ears, boy!");
+	n("string_0060");
+	f("string_0061");
 
 	if($.changing_schools){
-		m("We were also thinking about changing schools for Nick.");
-		m("Maybe to Claire's school.");
+		m("string_0062");
+		m("string_0063");
 	}
 	if($.studying_subject!=$.studying_subject_2){
-		m("Claire will be tutoring Nick every day after school in {0} and {1}.", $.studying_subject, $.studying_subject_2);
+		m("string_0064", tr('dinner_2', $.studying_subject), tr('dinner_2', $.studying_subject_2));
 	}else{
-		m("Claire will be tutoring Nick every day after school in {0}.", $.studying_subject);
+		m("string_0065", tr('dinner_2', $.studying_subject));
 	}
 
-	f("Nick, how does all this sound? Yes or no?");
-	m("He loves the ide--");
-	f("Shut up, Qi. I asked my son.");
-	m(". . .");
+	f("string_0066");
+	m("string_0067");
+	f("string_0068");
+	m("string_0009");
 
 	Show("dad","dad_threat");
 
-	f("Mister Nicklaus Liow.");
+	f("string_0069");
 	if($.changing_schools){
-		f("You want to change schools to chase your hot tutor girlfriend?");
+		f("string_0070");
 	}else{
-		f("You want to spend all your after-school hours with your hot tutor girlfriend?");
+		f("string_0071");
 	}
 
-	n("It's complicated, I--");
-	f("No pansy middle-of-the-road answers.");
-	f("Yes. Or. No.");
+	n("string_0072");
+	f("string_0073");
+	f("string_0074");
 
-	n(". . .");
+	n("string_0009");
 
 	Choose({
-		"Yes.": Agree_With_Dad,
+		"string_0136": Agree_With_Dad,
 		"No.": Argue_With_Dad
 	});
 
@@ -275,57 +275,57 @@ function Getting_A_Tutor_2(){
 
 function Agree_With_Dad(){
 
-	n("...Yes.");
+	n("string_0075");
 
-	f("Hm.");
-	f("You two seem to have made this big life decision very eagerly!");
-	f("So eagerly, in fact, you made it in less than an hour, and tried to hide it from me. What a sudden change.");
-	m(". . .");
-	n(". . .");
+	f("string_0076");
+	f("string_0077");
+	f("string_0078");
+	m("string_0009");
+	n("string_0009");
 
-	f("Nick, you did something naughty, didn't you?");
-	f("What did you do.");
+	f("string_0079");
+	f("string_0080");
 
 	Choose({
-		"I failed my midterms.": function(message){
+		"dinner_5_choice_5_entry_0000": function(message){
 
 			n(message);
 
-			f("...Oh.");
-			f("Yeah, you need to get your grades back up.");
+			f("string_0081");
+			f("string_0082");
 
 			Show("dad","dad_serious");
 
-			f("Or you'll be stuck in a teaching job like your mother! Haha!");
-			n(". . .");
+			f("string_0083");
+			n("string_0009");
 			Agreeable_Ending();
 
 		},
-		"I had sex with Jack.": function(message){
+		"dinner_5_choice_5_entry_0001": function(message){
 
 			n(message);
 
 			Show("mom","mom_cry");
-			m("[sob]");
-			f(". . .");
+			m("string_0084");
+			f("string_0009");
 			Argument_Ending();
 
 		},
-		"I had sex with Claire.": function(message){
+		"dinner_5_choice_5_entry_0002": function(message){
 
 			n(message);
 
-			m("...Nick!");
-			f(". . .");
-			f("   Nnnnnniiiiiiiiice.");
-			m("...Dear!");
-			f("Wait, uh, you didn't get her pregnant, did you?");
-			n("No. I'm not stupid.");
+			m("string_0085");
+			f("string_0009");
+			f("string_0086");
+			m("string_0087");
+			f("string_0088");
+			n("string_0089");
 
 			Show("dad","dad_serious");
 
-			f("Good. Otherwise you'd be stuck for the next two decades raising a kid, like me! Haha!");
-			n("Ha ha.");
+			f("string_0090");
+			n("string_0006");
 			Agreeable_Ending();
 
 		}
@@ -337,44 +337,44 @@ function Agreeable_Ending(){
 
 	$.father_oblivious = true;
 
-	f("For a moment there, Nick, I thought you'd been smoking pot with your hippie classmate Jack, or something!");
+	f("string_0091");
 
 	Show("nicky","dinner_nicky_sit");
-	n(". . .");
-	f("So!");
-	f("Who wants to watch a movie this weekend? I hear Inception is good.");
+	n("string_0009");
+	f("string_0092");
+	f("string_0093");
 
 	Choose({
-		"Let's watch it! I haven't seen it yet.": function(message){
+		"dinner_5_choice_6_entry_0000": function(message){
 			n(message);
-			f("Then it's a plan!");
-			f("Hey Nick, you know who's acting in the movie?");
-			n("Um. Leonardo DiCaprio?");
-			f("No no, Ellen Page.");
-			f("Doesn't Claire look a little bit like her?");
-			n("I guess.");
+			f("string_0094");
+			f("string_0095");
+			n("string_0096");
+			f("string_0097");
+			f("string_0098");
+			n("string_0099");
 			Dinner_Ending();
 		},
-		"Uh... let's do a different movie...": function(message){
+		"dinner_5_choice_6_entry_0001": function(message){
 			n(message);
-			f("What, Inception too complicated for you?");
-			n("Hey...");
+			f("string_0100");
+			n("string_0101");
 			if($.studying_subject!=$.studying_subject_2){
-				f("Sure, I understand if you failed {0} and {1}...", $.studying_subject, $.studying_subject_2);
+				f("string_0102", tr('dinner_2', $.studying_subject), tr('dinner_2', $.studying_subject_2));
 			}else{
-				f("Sure, I understand if you failed {0}...", $.studying_subject);
+				f("string_0103", tr('dinner_2', $.studying_subject));
 			}
-			f("But come on, this is a <i>movie</i>!");
-			f("You can't have inherited that much stupid from your mother's side! Haha!");
-			n("Ha ha.");
+			f("string_0104");
+			f("string_0105");
+			n("string_0006");
 			Dinner_Ending();
 		},
-		"Oh, I already saw Inception.": function(message){
+		"dinner_5_choice_6_entry_0002": function(message){
 			n(message);
-			f("Oh ho, I see...");
-			f("You went on a little movie date with your special friend Claire, didn't you?");
-			n("Yeah.");
-			n("A date with my special friend.");
+			f("string_0106");
+			f("string_0107");
+			n("string_0108");
+			n("string_0109");
 			Dinner_Ending();
 		}
 	});
@@ -383,51 +383,51 @@ function Agreeable_Ending(){
 
 function Argue_With_Dad(){
 
-	n("...No.");
+	n("string_0110");
 
-	f("Excuse me?");
-	n("No. Mom's doing this so I can't see Jack anymore.");
-	f("Jack.");
-	n("My friend.");
+	f("string_0111");
+	n("string_0112");
+	f("string_0113");
+	n("string_0114");
 
 	Choose({
-		"My boyfriend.": function(message){
+		"dinner_5_choice_7_entry_0000": function(message){
 
 			n(message);
 
 			Show("mom","mom_cry");
-			m("[sob]");
+			m("string_0084");
 
-			m("Jack did this to our son!");
-			f("That kid chose his lifestyle, but I will not have it be yours, Nick.");
+			m("string_0115");
+			f("string_0116");
 			Argument_Ending();
 		},
-		"Mom hates him, coz he happens to be gay.": function(message){
+		"dinner_5_choice_7_entry_0001": function(message){
 
 			n(message);
 
 			Show("mom","mom_cry");
-			m("[sob]");
+			m("string_0084");
 
-			f("You made your mother cry.");
+			f("string_0117");
 			if($.hippies){
-				m("And his parents are drug addicts!");
+				m("string_0118");
 			}
-			f("Jack chose that lifestyle, but I will not have it be yours, Nick.");
+			f("string_0119");
 			Argument_Ending();
 		},
-		"Mom hates him, coz she THINKS he's gay.": function(message){
+		"dinner_5_choice_7_entry_0002": function(message){
 
 			n(message);
 
 			Show("mom","mom_cry");
-			m("[sob]");
+			m("string_0084");
 
-			m("Jack IS gay!");
+			m("string_0120");
 			if($.hippies){
-				m("And his parents are drug addicts!");
+				m("string_0118");
 			}
-			f("Jack chose that lifestyle, but I will not have it be yours, Nick.");
+			f("string_0119");
 			Argument_Ending();
 		}
 	});
@@ -438,99 +438,99 @@ function Argument_Ending(){
 
 	$.father_oblivious = false;
 
-	n(". . .");
+	n("string_0009");
 
 	if($.top_or_bottom=="top"){
-		m("Jack acts like the woman, not him...");
+		m("string_0121");
 	}
 	switch($.what_are_you){
 		case "bisexual":
-			m("Nick's not fully gay, he told me himself he's still attracted to girls!");
-			n(". . .");
+			m("string_0122");
+			n("string_0009");
 			break;
 		case "confused":
-			m("Earlier Nick told me he was just confused!");
-			f("Oh, clearly he is.");
-			n(". . .");
+			m("string_0123");
+			f("string_0124");
+			n("string_0009");
 			break;
 		case "son":
-			n("Look, like I told Mom just now, I'm your SON, isn't that enou--");
+			n("string_0125");
 			break;
 	}
 
-	f("Nick, you're changing schools.");
-	n(". . .");
-	m("huuu... huuu... huuu...");
+	f("string_0126");
+	n("string_0009");
+	m("string_0127");
 
-	f("Your mother and I will do random checks on your texts and emails.");
-	n(". . .");
-	m("owww... owww...");
+	f("string_0128");
+	n("string_0009");
+	m("string_0129");
 
-	f("I swear, if I have to pay Claire extra to make you realize you're straight, I will.");
-	n(". . .");
+	f("string_0130");
+	n("string_0009");
 
 	Show("mom","mom_sit");
 	if($.crying=="anger"){
-		m("When I was crying earlier, he accused it of being fake!");
-		f("Qi, shut up. We're not talking about you.");
+		m("string_0131");
+		f("string_0132");
 	}
 	if($.crying=="mocking"){
-		m("When I was crying earlier, he was mocking it!");
-		f("Qi, shut up. We're not talking about you.");
+		m("string_0133");
+		f("string_0132");
 	}
 
-	f("So Nick.");
-	f("Would you like to say anything, anything at all, about all that?");
+	f("string_0134");
+	f("string_0135");
 
 	Choose({
-		"Yes. Fuck this, and fuck you.": function(message){
+		"dinner_5_choice_8_entry_0000": function(message){
 
-			n("Yes.");
-			n("FUCK this.");
-			n("And FUCK you.");
+			n("string_0136");
+			n("string_0137");
+			n("string_0138");
 
 			Show("nicky","dinner_nicky_outrage");
-			n("Fuck BOTH of you, you narcissistic slimy pieces of SHI--");
+			n("string_0139");
 
 			Dinner_Ending_Punch();
 
 		},
-		"No. I accept my punishment.": function(message){
+		"dinner_5_choice_8_entry_0001": function(message){
 
 			n(message);
-			f("Good. At least you're taking this like a man.");
-			n(". . .");
+			f("string_0140");
+			n("string_0009");
 
 			Show("dad","dad_serious");
 
-			m("sniff...");
-			f("I'm going out to the bar, and getting something actually edible to eat.");
+			m("string_0141");
+			f("string_0142");
 
 			Show("dad",null);
 
-			f("Honey sweetie dear? Your cooking is shit.");
+			f("string_0143");
 			PlaySound("sfx","dinner_door");
 
-			m(". . .");
+			m("string_0009");
 
 			Show("mom","mom_cry");
 
-			m("BAWWWWW");
+			m("string_0144");
 
 			Dinner_Ending();
 
 		},
-		"You can't hurt me.": function(message){
+		"dinner_5_choice_8_entry_0002": function(message){
 
 			n(message);
-			f(". . .");
-			m("Dear, no...");
-			f("Mighty strong words, son.");
-			m("Honey, please don't!");
-			f("At least you're standing up to me. Like a man.");
-			m("Please! It's my fault! Don't--");
-			f("Ice keeps the swelling down.");
-			m("DEAR!");
+			f("string_0009");
+			m("string_0145");
+			f("string_0146");
+			m("string_0147");
+			f("string_0148");
+			m("string_0149");
+			f("string_0150");
+			m("string_0151");
 
 			Dinner_Ending_Punch();
 

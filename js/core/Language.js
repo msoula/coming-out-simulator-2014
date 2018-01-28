@@ -14,7 +14,9 @@ function tr(part, key) {
 
 Choose({
     "English": function(message){
-        Start();
+        load('en', function() {
+            Start();
+        });
     },
     "Français": function(message){
         load('fr', function() {

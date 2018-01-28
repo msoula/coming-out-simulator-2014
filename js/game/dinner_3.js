@@ -10,12 +10,12 @@ function Start_Dinner_3(){
     m("dinner_3");
     n("dinner_3");
 
-	n("Mom.");
+	n("string_0000");
 
 	Choose({
-		"That's why I'm studying more with Jack.": Tutor,
-		"Look, I'm trying. I really am.": Tutor,
-		"My grades are fine.": Tutor
+		"dinner_3_choice_1_entry_0000": Tutor,
+		"dinner_3_choice_1_entry_0001": Tutor,
+		"dinner_3_choice_1_entry_0002": Tutor
 	});
 
 }
@@ -23,73 +23,73 @@ function Start_Dinner_3(){
 function Tutor(message){
 
 	n(message);
-	m("I'm worried for you. Jack's not a good influence.");
+	m("string_0001");
 
 	if($.hippies){
-		m("I think his parents might even be drug addicts...");
-		n("What makes you say th--");
+		m("string_0002");
+		n("string_0003");
 	}else if($.im_a_poet){
-		m("All he does is do poetry.");
-		n("What makes you say th--");
+		m("string_0004");
+		n("string_0003");
 	}
 
-	m("I'm getting you a home tutor.");
-	n("...what?");
+	m("string_0005");
+	n("string_0006");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m("She'll be tutoring you in {0} and {1}.", $.studying_subject, $.studying_subject_2);
+		m("string_0007", tr('dinner_2', $.studying_subject), tr('dinner_2', $.studying_subject_2));
 	}else{
-		m("She'll be tutoring you in {0}.", $.studying_subject);
+		m("string_0008", tr('dinner_2', $.studying_subject));
 	}
 
-	m("Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
+	m("string_0009");
 
 	Choose({
-		"Are you trying to stop me from seeing Jack?": Tutor_Seeing,
-		"Are you trying to matchmake me with her?": Tutor_Matchmake,
-		"Can we talk about tutors another time?": Tutor_Forget
+		"dinner_3_choice_2_entry_0000": Tutor_Seeing,
+		"dinner_3_choice_2_entry_0001": Tutor_Matchmake,
+		"dinner_3_choice_2_entry_0002": Tutor_Forget
 	});
 
 }
 
 function Tutor_Seeing(message){
 	n(message);
-	m("I'm sorry, <i>seeing</i> Jack?");
-	m("Be careful how you say that. You make it sound like...");
+	m("string_0010");
+	m("string_0011");
 
 	Choose({
-		"Like we're dating? Yeah. We are.": function(message){
+		"dinner_3_choice_3_entry_0000": function(message){
 			n(message);
-			m(". . .");
-			n(". . .");
-			n("...Hello?");
-			m(". . .");
-			n("Anyone there?");
-			m(". . .");
+			m("string_0012");
+			n("string_0012");
+			n("string_0013");
+			m("string_0012");
+			n("string_0014");
+			m("string_0012");
 			Threat_School();
 		},
-		"I just meant meeting Jack.": function(message){
+		"dinner_3_choice_3_entry_0001": function(message){
 			n(message);
-			m("Okay. Just being clear about some things.");
-			n("Yeah.");
-			m(". . .");
-			m("Claire's really cute.");
-			n("Sure.");
-			m("She has perky breasts.");
+			m("string_0015");
+			n("string_0016");
+			m("string_0012");
+			m("string_0017");
+			n("string_0018");
+			m("string_0019");
 			Threat_Tutor();
 		},
-		"We're. Not. Boyfriends.": function(message){
+		"dinner_3_choice_3_entry_0002": function(message){
 			n(message);
-			m(". . .");
-			m("Okay.");
-			m("I never said you were, but... okay.");
-			n("We're friends.");
+			m("string_0012");
+			m("string_0020");
+			m("string_0021");
+			n("string_0022");
 
 			if($.relationship=="friend"){
-				m("\"Good pals\"...");
+				m("string_0023");
 			}
 			if($.relationship=="best friend"){
-				m("\"BEST friends\"...");
+				m("string_0024");
 			}
 
 			Threat_Tutor();
@@ -100,43 +100,43 @@ function Tutor_Seeing(message){
 
 function Tutor_Matchmake(message){
 	n(message);
-	m("Well, if that's what you want, I could!");
-	n("nooooo.");
-	m("Don't be shy! You're growing up to be a man.");
-	m("And you're going to give me lots of grandkids.");
+	m("string_0025");
+	n("string_0026");
+	m("string_0027");
+	m("string_0028");
 
 	Choose({
-		"Stop it! I haven't even met Claire yet!": function(message){
+		"dinner_3_choice_4_entry_0000": function(message){
 			n(message);
-			m("Yet!");
-			m("She's coming over tomorrow!");
-			n("What? But I promised Jack--");
-			m("I ironed your best clothes. You'll make a good first impression.");
+			m("string_0029");
+			m("string_0030");
+			n("string_0031");
+			m("string_0032");
 			Threat_Tutor();
 		},
-		"The odds of that are 50-50, coz I'm bi.": function(message){
+		"dinner_3_choice_4_entry_0001": function(message){
 
 			$.admit_bisexuality = true;
 
 			n(message);
-			m("Um. Bi?...");
+			m("string_0033");
 
 			Show("nicky","dinner_nicky_defiant");
 
-			n("Yes. As in BISEXUAL.");
-			n("As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
-			m(". . .");
-			n(". . .");
+			n("string_0034");
+			n("string_0035");
+			m("string_0012");
+			n("string_0012");
 			Threat_School();
 		},
-		"No. I don't ever want to have kids.": function(message){
+		"dinner_3_choice_4_entry_0002": function(message){
 			n(message);
-			m("You'll change your mind when you grow up.");
-			m("Raising a child is wonderful. Your children will look up to you!");
-			n("...of course, you narcissist.");
-			m("Excuse me?");
-			n("Nothing.");
-			m(". . .");
+			m("string_0036");
+			m("string_0037");
+			n("string_0038");
+			m("string_0039");
+			n("string_0040");
+			m("string_0012");
 			Threat_Tutor();
 		}
 	});
@@ -144,41 +144,41 @@ function Tutor_Matchmake(message){
 
 function Tutor_Forget(message){
 	n(message);
-	m("No, because I've already scheduled Claire to come over tomorrow.");
-	n("What?!");
-	n("No. I promised to study with Jack tomorrow.");
-	m(". . .");
-	m("How long did you want to stay over at his place?");
+	m("string_0041");
+	n("string_0042");
+	n("string_0043");
+	m("string_0012");
+	m("string_0044");
 
 	Choose({
-		"Overnight.": function(message){
+		"dinner_3_choice_5_entry_0000": function(message){
 			n(message);
-			m(". . .");
-			n(". . .");
-			n("...Hello?");
-			n("It's not weird. Friends have sleepovers all the time.");
-			m(". . .");
+			m("string_0012");
+			n("string_0012");
+			n("string_0013");
+			n("string_0045");
+			m("string_0012");
 			Threat_School();
 		},
-		"Just the afternoon.": function(message){
+		"dinner_3_choice_5_entry_0001": function(message){
 			n(message);
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
-				n("Huh?");
+				m("string_0046");
+				n("string_0047");
 			}else{
-				m("...I knew it.");
+				m("string_0048");
 			}
-			m("You're just hanging out with him.");
+			m("string_0049");
 			Threat_Tutor();
 		},
-		"Maybe an hour or so.": function(message){
+		"dinner_3_choice_5_entry_0002": function(message){
 			n(message);
-			m("That's not enough to really get studying done.");
+			m("string_0050");
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
-				n("Huh?");
+				m("string_0046");
+				n("string_0047");
 			}
-			m("You're just hanging out with him.");
+			m("string_0049");
 			Threat_Tutor();
 		}
 	});
@@ -188,36 +188,36 @@ function Threat_Tutor(){
 
 	Show("nicky","dinner_nicky_defiant");
 
-	n(". . .");
-	m("Claire will be tutoring you every day after school, starting tomorrow.");
+	n("string_0012");
+	m("string_0051");
 
 	Choose({
-		"Every day?! What about my friends?!":function(message){
+		"dinner_3_choice_6_entry_0000":function(message){
 			n(message);
-			m("Sweetie, I'm your friend!");
-			n(". . .");
-			m("Also Claire can be your friend. Maybe more than friends.");
-			n(". . .");
-			n("Are we done?");
-			m("Just... one more thing.");
+			m("string_0052");
+			n("string_0012");
+			m("string_0053");
+			n("string_0012");
+			n("string_0054");
+			m("string_0055");
 			Plot_Twist();
 		},
-		"Okay, but my weekends are free, right?": function(message){
+		"dinner_3_choice_6_entry_0001": function(message){
 			n(message);
-			m("Yes.");
-			n("Okay. Good that this is all settled now.");
-			m("...Yes.");
-			n(". . .");
-			m("Just... one more thing.");
+			m("string_0056");
+			n("string_0057");
+			m("string_0058");
+			n("string_0012");
+			m("string_0055");
 			Plot_Twist();
 		},
-		"What if I just DON'T study with Claire?": function(message){
+		"dinner_3_choice_6_entry_0002": function(message){
 			n(message);
-			m("Well, if you also want to hang out with her, that's good too.");
-			m("Anything to make you more manly.");
-			n("ugh.");
-			m("Oh.");
-			m("One more thing.");
+			m("string_0059");
+			m("string_0060");
+			n("string_0061");
+			m("string_0062");
+			m("string_0063");
 			Plot_Twist();
 		}
 	});
@@ -228,37 +228,37 @@ function Threat_School(){
 
 	$.changing_schools = true;
 
-	m("You're changing schools.");
+	m("string_0064");
 
 	Show("nicky","dinner_nicky_outrage");
 
-	n("WHAT?!");
-	m("I think it's not just Jack, it's the entire school that's a bad influence on you.");
-	n("ARE YOU SERIOUS.");
-	m("The whole Canadian culture is making you confused about who you are.");
+	n("string_0065");
+	m("string_0066");
+	n("string_0067");
+	m("string_0068");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"No, it's YOUR Asian culture that's backwards!": function(message){
+		"dinner_3_choice_7_entry_0000": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("It's YOUR culture, too!");
-			n(". . .");
+			m("string_0069");
+			m("string_0070");
+			n("string_0012");
 			Plot_Twist();
 		},
-		"You can't do this to your CHILD!": function(message){
+		"dinner_3_choice_7_entry_0001": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("I'm your MOTHER, it's my right to do whatever I want with you!");
-			n(". . .");
+			m("string_0069");
+			m("string_0071");
+			n("string_0012");
 			Plot_Twist();
 		},
-		"Whatever, ALL schools have queer people.": function(message){
+		"dinner_3_choice_7_entry_0002": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("And watch it, I could change my mind and start homeschooling you.");
-			n(". . .");
+			m("string_0069");
+			m("string_0072");
+			n("string_0012");
 			Plot_Twist();
 		}
 	});
@@ -267,29 +267,29 @@ function Threat_School(){
 
 function Plot_Twist(){
 
-	m("Yesterday, when you were supposedly studying with Jack?");
-	m("I know you secretly went off to watch a movie.");
+	m("string_0073");
+	m("string_0074");
 
 	Show("nicky","dinner_nicky_sit");
-	n(". . .");
+	n("string_0012");
 
 	Show("clock_time","clock_1920");
 
 	Choose({
-		"Oh my god. You read my texts.": function(message){
+		"dinner_3_choice_8_entry_0000": function(message){
 			n(message);
-			m("Yes. See how smart you can be when you're not with Jack?");
+			m("string_0075");
 			Plot_Twist_2();
 		},
-		"No, we didn't. We studied.": function(message){
+		"dinner_3_choice_8_entry_0001": function(message){
 			n(message);
-			m("You are a very stubborn boy.");
-			m("I read your text messages.");
+			m("string_0076");
+			m("string_0077");
 			Plot_Twist_2();
 		},
-		"What makes you think that?": function(message){
+		"dinner_3_choice_8_entry_0002": function(message){
 			n(message);
-			m("Because I read your text messages.");
+			m("string_0078");
 			Plot_Twist_2();
 		}
 	});
@@ -298,45 +298,45 @@ function Plot_Twist(){
 
 function Plot_Twist_2(){
 
-	n(". . .");
-	m("Before dinner. I was in your room.");
+	n("string_0012");
+	m("string_0079");
 
 	// Dinner_1
-	m("You yelled out {0} from downstairs, while I unlocked your phone...", $.what_you_called_out);
-	m("And read what you and Jack have been sending to each other.");
-	m("I'm your mother. I have the right.");
+	m("string_0080", tr('dinner_1', $.what_you_called_out));
+	m("string_0081");
+	m("string_0082");
 
-	n(". . .");
+	n("string_0012");
 
 	if($.im_a_poet){
-		m("Weird poetry?");
+		m("string_0083");
 	}
 	if($.hippies){
-		m("Talking about smoking marijuana?");
+		m("string_0084");
 	}
 	if($.im_a_poet || $.hippies){
-		m("Helping you lie to your own mother?");
-		m("What else have you been doing behind my back?");
+		m("string_0085");
+		m("string_0086");
 	}
 
 	Choose({
-		"This has to be a bad dream.": function(message){
+		"dinner_3_choice_9_entry_0000": function(message){
 			n(message);
-			m("Like that 'Deception' movie?");
-			n("It's... it's 'Inception'.");
-			m("Don't talk back to me.");
+			m("string_0087");
+			n("string_0088");
+			m("string_0089");
 			Plot_Twist_3();
 		},
-		"I'm sorry. I'm so sorry.": function(message){
+		"dinner_3_choice_9_entry_0001": function(message){
 			n(message);
-			m("I forgive you.");
-			m("You're my child, of course I forgive you.");
+			m("string_0090");
+			m("string_0091");
 			Plot_Twist_3();
 		},
-		"I hate you.": function(message){
+		"dinner_3_choice_9_entry_0002": function(message){
 			n(message);
-			m("That's okay.");
-			m("I still love you, Nick.");
+			m("string_0092");
+			m("string_0093");
 			Plot_Twist_3();
 		},
 	});

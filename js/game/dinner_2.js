@@ -8,48 +8,48 @@ function Start_Dinner_2(){
     m("dinner_2");
     n("dinner_2");
 
-	m("Hi sweetie.");
+	m("string_0003");
 	Show("mom","mom_sit");
 
 	switch($.waiting_action){
 		case "eat":
-			m("Oh, you started eating without me. You're very impatient.");
-			n("...right.");
+			m("string_0004");
+			n("string_0005");
 			break;
 		case "wait":
-			m("You could have started without me. No need to let your food get cold.");
-			n("...sure.");
+			m("string_0006");
+			n("string_0007");
 			break;
 		case "play":
-			m("It's immature to play with your food, you know.");
-			n("Yeah, yeah.");
+			m("string_0008");
+			n("string_0009");
 			break;
 	}
 
-	m("Your father's running late. He'll be joining us for dinner in an hour's time.");
+	m("string_0010");
 
 	Choose({
-		"Cool. Let's eat.": function(message){
+		"dinner_2_choice_1_entry_0000": function(message){
 			n(message);
-			n("*nom nom nom*");
-			m(". . .");
-			m("What's your plans for tomorrow?");
+			n("string_0011");
+			m("string_0012");
+			m("string_0013");
 			Start_Dinner_2_1();
 		},
-		"I have something to tell both of you.": function(message){
+		"dinner_2_choice_1_entry_0001": function(message){
 			n(message);
-			m("Alright. Tell us both later when he comes back.");
-			n("Oh. Okay.");
-			m(". . .");
-			n("*nom nom nom*");
-			m("So, what's your plans for tomorrow?");
+			m("string_0014");
+			n("string_0015");
+			m("string_0012");
+			n("string_0011");
+			m("string_0016");
 			Start_Dinner_2_1();
 		},
-		"There's something I need to tell just you first.": function(message){
+		"dinner_2_choice_1_entry_0002": function(message){
 			n(message);
-			m("Hold on Nick, I haven't asked about your day yet!");
-			n("Today was fine.");
-			m("Okay. And what's your plans for tomorrow?");
+			m("string_0017");
+			n("string_0018");
+			m("string_0019");
 			Start_Dinner_2_1();
 		}
 	});
@@ -58,22 +58,22 @@ function Start_Dinner_2(){
 
 function Start_Dinner_2_1(){
 
-	n("Oh. Uh... studying.")
-	n("Yeah. Tomorrow I'm studying.");
-	m("What subject?");
-	n("Er...");
+	n("string_0020");
+	n("string_0021");
+	m("string_0022");
+	n("string_0023");
 
 	Choose({
-		"Chemistry.": function(message){
-			$.studying_subject = "Chemistry";
+		"dinner_2_choice_2_entry_0000": function(message){
+			$.studying_subject = "string_0000";
 			Start_Dinner_2_2(message);
 		},
-		"Calculus.": function(message){
-			$.studying_subject = "Calculus";
+		"dinner_2_choice_2_entry_0001": function(message){
+			$.studying_subject = "string_0001";
 			Start_Dinner_2_2(message);
 		},
-		"Compsci.": function(message){
-			$.studying_subject = "Computer Science";
+		"dinner_2_choice_2_entry_0002": function(message){
+			$.studying_subject = "string_0002";
 			Start_Dinner_2_2(message);
 		}
 	});
@@ -83,36 +83,36 @@ function Start_Dinner_2_1(){
 function Start_Dinner_2_2(message){
 
 	n(message);
-	m("Good.");
-	m("You really, really could improve your grades in your {0} class.", $.studying_subject);
-	n(". . .");
-	m("So, I'll be at the library tomorrow.");
-	m("Will I see you studying there?");
-	n("Actually, I'm gonna study at Jack's place.");
-	m("Again?");
-	m("You spend a lot of time with him.");
+	m("string_0024");
+	m("string_0025", tr('dinner_2', $.studying_subject));
+	n("string_0012");
+	m("string_0026");
+	m("string_0027");
+	n("string_0028");
+	m("string_0029");
+	m("string_0030");
 
 	Choose({
-		"We just study together, that's all.": function(message){
+		"dinner_2_choice_3_entry_0000": function(message){
 			$.relationship = "study";
 			Buddy_1(message);
 		},
-		"Mom, Jack is... more than a friend.": function(message){
+		"dinner_2_choice_3_entry_0001": function(message){
 
 			$.relationship = "best friend";
 			n(message);
 
 			$.lying_about_hanging_out = true;
-			m("Oh, like best friends?");
-			n("Um. Well--");
-			m("So you're just hanging out, not studying.");
-			n("We ARE studying!");
-			m(". . .");
-			m("Alright, just don't lie to me.");
-			n("I'm not.");
+			m("string_0031");
+			n("string_0032");
+			m("string_0033");
+			n("string_0034");
+			m("string_0012");
+			m("string_0035");
+			n("string_0036");
 			Buddy_1_point_5();
 		},
-		"Well yeah, that's what good pals do.": function(message){
+		"dinner_2_choice_3_entry_0002": function(message){
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
@@ -131,14 +131,14 @@ function Buddy_1(message){
 
 	if($.relationship!="study"){
 		$.lying_about_hanging_out = true;
-		m("Oh. So you're just hanging out, not studying.");
-		n("We ARE studying!");
-		m(". . .");
-		m("Alright, just don't lie to me.");
-		n("I'm not.");
+		m("string_0037");
+		n("string_0034");
+		m("string_0012");
+		m("string_0035");
+		n("string_0036");
 	}else{
-		m("Okay. I'm just making sure.");
-		n("Of... what?");
+		m("string_0038");
+		n("string_0039");
 	}
 
 	Buddy_1_point_5();
@@ -146,138 +146,138 @@ function Buddy_1(message){
 
 function Buddy_Caught_Lying_1(message,callback){
 	n(message);
-	m("Wait...");
-	m("I thought you said you 'just study together'.");
-	m("You didn't tell me you were friends.");
+	m("string_0040");
+	m("string_0041");
+	m("string_0042");
 	$.lying_about_relationship = true;
 	Choose({
-		"Oops, I meant he's just a studymate.": callback,
-		"Well, he can also be my friend...": callback,
-		"No, I always said we were friends.": callback
+		"dinner_2_choice_4_entry_0000": callback,
+		"dinner_2_choice_4_entry_0001": callback,
+		"dinner_2_choice_4_entry_0002": callback
 	});
 }
 
 function Buddy_1_point_5(){
 
-	m("Just... don't hang around him too much.");
-	m("People might get the wrong idea.");
+	m("string_0043");
+	m("string_0044");
 
 	Choose({
-		"Oh. No, yeah, we're just friends.": function(message){
+		"dinner_2_choice_5_entry_0000": function(message){
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,Buddy_2);
 			}else{
 				Buddy_2(message);
 			}
 		},
-		"The wrong idea might be the right idea.": Buddy_4,
-		"What do you mean by... wrong idea?": Buddy_3
+		"dinner_2_choice_5_entry_0001": Buddy_4,
+		"dinner_2_choice_5_entry_0002": Buddy_3
 	});
 
 }
 
 function Buddy_2(message){
 	n(message);
-	m("Okay.");
+	m("string_0045");
 	if($.lying_about_relationship){
-		m("Just don't lie to me.");
-		n("I won't.");
-		m(". . .");
-		m("But... about you hanging out with Jack.");
+		m("string_0046");
+		n("string_0047");
+		m("string_0012");
+		m("string_0048");
 	}
-	m("It's just that some people might assume things, since...");
-	m("You know... he looks like...");
-	m("A gay?");
+	m("string_0049");
+	m("string_0050");
+	m("string_0051");
 	Buddy_Choice();
 }
 
 function Buddy_3(message){
 	n(message);
-	m("Just between mother and son, I think he might be... you know...");
-	n("No, what?");
-	m("A gay!");
-	m("He looks and talks like a gay.");
+	m("string_0052");
+	n("string_0053");
+	m("string_0054");
+	m("string_0055");
 	Buddy_Choice();
 }
 
 function Buddy_4(message){
 	n(message);
-	m("Oh, that's like a zen thing, right?");
-	n("Um.");
-	m("Zen is also about nature, and your classmate Jack, he...");
-	m("...you know, doesn't seem natural?");
+	m("string_0056");
+	n("string_0057");
+	m("string_0058");
+	m("string_0059");
 	Choose({
-		"You think he's gay.": function(message){
+		"dinner_2_choice_6_entry_0000": function(message){
 			n(message);
-			m("Yes!");
-			m("You suspect it, too!");
+			m("string_0060");
+			m("string_0061");
 			Buddy_Choice();
 		},
-		"Don't say that about my friend!": function(message){
+		"dinner_2_choice_6_entry_0001": function(message){
 
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,function(message){
 
 					n(message);
-					m("Okay.");
-					m("Just don't lie to me.");
-					n("I won't.");
-					m(". . .");
+					m("string_0045");
+					m("string_0046");
+					n("string_0047");
+					m("string_0012");
 
-					m("But yes, even you agree that it's bad to be seen as 'not natural'.");
-					n("I never said--");
-					m("And I'm just looking out for you! Because he acts like, you know...");
-					m("A gay!");
+					m("string_0062");
+					n("string_0063");
+					m("string_0064");
+					m("string_0054");
 					Buddy_Choice();
 
 				});
 			}else{
 
 				n(message);
-				m("I'm just being honest.");
-				m("But yes, even you agree that it's bad to be seen as 'not natural'.");
-				n("I never said--");
-				m("And I'm just looking out for you! Because he acts like, you know...");
-				m("A gay!");
+				m("string_0065");
+				m("string_0062");
+				n("string_0063");
+				m("string_0064");
+				m("string_0054");
 				Buddy_Choice();
 
 			}
 
 		},
-		"What do you mean, he's not natural?": Buddy_3
+		"dinner_2_choice_6_entry_0002": Buddy_3
 	});
 }
 
 function Buddy_Choice(){
 	if($.relationship=="friend"){
-		m("And since you say he's a 'good pal'...");
-		m("People might think you're a gay like him, too.");
+		m("string_0066");
+		m("string_0067");
 	}
 	if($.relationship=="best friend"){
-		m("And since you say he's your BEST friend...");
-		m("People might think you're a gay like him, too.");
+		m("string_0068");
+		m("string_0067");
 	}
 	Choose({
-		"Ha, he sure acts gay. Luckily, he's not.": function(message){
+		"dinner_2_choice_7_entry_0000": function(message){
 			n(message);
-			m("See? You also think there's something not right about it.");
-			n("...sure.");
+			m("string_0069");
+			n("string_0007");
 			Buddy_Aftermath();
 		},
-		"What's wrong with being gay?!": function(message){
+		"dinner_2_choice_7_entry_0001": function(message){
 			n(message);
-			m("Nothing! Nothing.");
+			m("string_0070");
 			Buddy_Aftermath();
 		},
-		"Maybe... my friend might be gay.": function(message){
+		"dinner_2_choice_7_entry_0002": function(message){
 
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,function(message){
 					n(message);
-					m("Okay.");
-					m("Just don't lie to me.");
-					n("I won't.");
-					m(". . .");
+					m("string_0045");
+					m("string_0046");
+					n("string_0047");
+					m("string_0012");
 					Buddy_Aftermath();
 				});
 			}else{
@@ -292,18 +292,18 @@ function Buddy_Choice(){
 
 function Buddy_Aftermath(){
 
-	m("Don't get me wrong.");
-	m("I'm not saying those kind of people are bad!");
-	m("I just think... you should be careful around one of them.");
-	m("Jack might, you know, try to recruit you.");
+	m("string_0071");
+	m("string_0072");
+	m("string_0073");
+	m("string_0074");
 
 	Show("clock_time","clock_1910");
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"what.": Buddy_Aftermath_2,
-		"whaaat.": Buddy_Aftermath_2,
-		"whaaaaaaaaaaaaaaat.": Buddy_Aftermath_2
+		"dinner_2_choice_8_entry_0000": Buddy_Aftermath_2,
+		"dinner_2_choice_8_entry_0001": Buddy_Aftermath_2,
+		"dinner_2_choice_8_entry_0002": Buddy_Aftermath_2
 	});
 }
 
@@ -311,28 +311,28 @@ function Buddy_Aftermath_2(message){
 
 	n(message);
 
-	n("How do you even...");
-	n("Ugh, nevermind.");
-	m("Nick, I'm sorry you find me annoying.");
-	n("No, mom, stop doing th--");
-	m("Let's go back to talking about your grades.");
-	m("Now, what did you say you were studying tomorrow?");
+	n("string_0075");
+	n("string_0076");
+	m("string_0077");
+	n("string_0078");
+	m("string_0079");
+	m("string_0080");
 
 	Show("nicky","dinner_nicky_sit");
-	n(". . .");
-	n("Errrmmmmm...");
+	n("string_0012");
+	n("string_0081");
 
 	Choose({
-		"Compsci?": function(message){
-			$.studying_subject_2 = "Computer Science";
+		"dinner_2_choice_9_entry_0000": function(message){
+			$.studying_subject_2 = "string_0002";
 			Grades_Start(message);
 		},
-		"Chemistry?": function(message){
-			$.studying_subject_2 = "Chemistry";
+		"dinner_2_choice_9_entry_0001": function(message){
+			$.studying_subject_2 = "string_0000";
 			Grades_Start(message);
 		},
-		"Calculus?": function(message){
-			$.studying_subject_2 = "Calculus";
+		"dinner_2_choice_9_entry_0002": function(message){
+			$.studying_subject_2 = "string_0001";
 			Grades_Start(message);
 		}
 	});
@@ -346,7 +346,7 @@ function Buddy_Aftermath_2(message){
 
 function Grades_Start(message){
 	n(message);
-	m(". . .");
+	m("string_0012");
 	if($.studying_subject!=$.studying_subject_2){
 		Grades_Start_1();
 	}else{
@@ -355,30 +355,30 @@ function Grades_Start(message){
 }
 
 function Grades_Start_1(){
-	m("You first told me it was {0}.", $.studying_subject);
-	m("Now you tell me it's {0}?", $.studying_subject_2);
+	m("string_0082", tr('dinner_2', $.studying_subject));
+	m("string_0083", tr('dinner_2', $.studying_subject_2));
 	$.lying_about_studying = true;
-	n("Mom, I was just confus--");
+	n("string_0084");
 	if($.lying_about_hanging_out || $.lying_about_relationship){
-		m("This is TWICE you've lied to me during this dinner.");
-		n("I didn't lie about--");
+		m("string_0085");
+		n("string_0086");
 	}
-	m("Either way, your grades in both subjects are terrible.");
-	n(". . .");
+	m("string_0087");
+	n("string_0012");
 	Grades_Explaining();
 }
 
 function Grades_Start_2(){
-	m("You hesitated for a moment there.");
-	n("I was eating.");
-	m("Okay.");
+	m("string_0088");
+	n("string_0089");
+	m("string_0045");
 	if($.lying_about_hanging_out){
-		m("I wonder if you're studying with Jack at all, or just always hanging out.");
-		n("We study.");
+		m("string_0090");
+		n("string_0091");
 	}
-	m(". . .");
-	m("Still, your grades in your {0} class are terrible.", $.studying_subject_2);
-	n(". . .");
+	m("string_0012");
+	m("string_0092", tr('dinner_2', $.studying_subject_2));
+	n("string_0012");
 	Grades_Explaining();
 }
 

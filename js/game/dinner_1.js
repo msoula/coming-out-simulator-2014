@@ -18,13 +18,13 @@ function Start_Dinner_1(){
 	////////////////////////////
 
 	Wait(2500);
-	n("Where is everyone?...");
-	n(". . .");
+	n("string_0000");
+	n("string_0001");
 
 	Choose({
-		"Moooom?": Waiting_1,
-		"Daaaaad?": Waiting_1,
-		"Hello, anybody?": Waiting_1
+		"dinner_1_choice_1_entry_0000": Waiting_1,
+		"dinner_1_choice_1_entry_0001": Waiting_1,
+		"dinner_1_choice_1_entry_0002": Waiting_1
 	});
 
 }
@@ -34,18 +34,18 @@ function Waiting_1(message){
 	$.what_you_called_out = message;
 	n(message);
 
-	n(". . .");
+	n("string_0001");
 
 	Choose({
-		"[start eating]": function(message){
+		"dinner_1_choice_2_entry_0000": function(message){
 			$.waiting_action = "eat";
 			Waiting_2(message);
 		},
-		"[wait some more]": function(message){
+		"dinner_1_choice_2_entry_0001": function(message){
 			$.waiting_action = "wait";
 			Waiting_2(message);
 		},
-		"[play with food]": function(message){
+		"dinner_1_choice_2_entry_0002": function(message){
 			$.waiting_action = "play";
 			Waiting_2(message);
 		}
@@ -56,7 +56,7 @@ function Waiting_1(message){
 function Waiting_2(message){
 
 	n(message);
-	n(". . .");
+	n("string_0001");
 
 	PlaySound("clock","dinner_meowing",{loop:-1});
 
@@ -67,7 +67,7 @@ function Waiting_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"Cut the crying, cacophonous cat clock!": function(message){
+		"dinner_1_choice_3_entry_0000": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
@@ -75,47 +75,47 @@ function Waiting_2(message){
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			if($.im_a_poet){
-				m("Did you learn poetry from a friend?");
+				m("string_0002");
 			}else{
-				m("Poetic.");
+				m("string_0003");
 			}
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh, hey mom.");
+			n("string_0004");
 
 			Waiting_End();
 		},
-		"Ugh, why did we get that thing?": function(message){
+		"dinner_1_choice_3_entry_0001": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
-			m("Your grandfather gave it to us.");
+			m("string_0005");
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh! Hey mom.");
+			n("string_0006");
 
 			Waiting_End();
 		},
-		"Meow! Meow! Meow! Meow!": function(message){
+		"dinner_1_choice_3_entry_0002": function(message){
 
-			n("Meow.");
-			n("Meow!");
+			n("string_0007");
+			n("string_0008");
 
 			Show("nicky","dinner_nicky_outrage");
-			n("MEOW!");
+			n("string_0009");
 
 			Show("mom","mom_stand");
 
-			m("Nick, what are you doing?...");
+			m("string_0010");
 
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 			Show("nicky","dinner_nicky_sit");
 
-			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
+			n("string_0011");
 
 			Waiting_End();
 		}
